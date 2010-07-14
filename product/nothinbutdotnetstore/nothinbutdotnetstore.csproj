@@ -61,6 +61,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="web\core\ApplicationCommand.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\DefaultCommandRegistry.cs" />
     <Compile Include="web\core\DefaultFrontController.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="web\core\MissingWebCommand.cs" />
     <Compile Include="web\core\RawHandler.cs" />
     <Compile Include="web\core\Request.cs" />
+    <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestFactory.cs" />
     <Compile Include="web\core\WebCommand .cs" />
   </ItemGroup>
