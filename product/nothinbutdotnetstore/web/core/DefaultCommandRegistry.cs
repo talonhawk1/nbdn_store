@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using nothinbutdotnetstore.web.core.stubs;
 
 namespace nothinbutdotnetstore.web.core
 {
@@ -7,9 +8,8 @@ namespace nothinbutdotnetstore.web.core
     {
         IEnumerable<WebCommand> commands;
 
-        public DefaultCommandRegistry() : this(new List<WebCommand>())
+        public DefaultCommandRegistry():this(new StubFakeCommandSet())
         {
-            
         }
 
         public DefaultCommandRegistry(IEnumerable<WebCommand> commands)

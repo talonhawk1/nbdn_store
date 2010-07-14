@@ -61,6 +61,10 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="model\Department.cs" />
+    <Compile Include="tasks\CatalogTasks.cs" />
+    <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
+    <Compile Include="web\application\ViewMainDepartments.cs" />
     <Compile Include="web\core\ApplicationCommand.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\DefaultCommandRegistry.cs" />
@@ -75,7 +79,10 @@
     <Compile Include="web\core\Request.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestFactory.cs" />
-    <Compile Include="web\core\ViewMainDepartments.cs" />
+    <Compile Include="web\core\ResponseEngine.cs" />
+    <Compile Include="web\core\stubs\StubFakeCommandSet.cs" />
+    <Compile Include="web\core\stubs\StubRequestFactory.cs" />
+    <Compile Include="web\core\stubs\StubResponseEngine.cs" />
     <Compile Include="web\core\WebCommand .cs" />
   </ItemGroup>
   <ItemGroup>
