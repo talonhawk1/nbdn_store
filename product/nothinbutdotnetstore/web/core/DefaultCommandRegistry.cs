@@ -7,6 +7,11 @@ namespace nothinbutdotnetstore.web.core
     {
         IEnumerable<WebCommand> commands;
 
+        public DefaultCommandRegistry() : this(new List<WebCommand>())
+        {
+            
+        }
+
         public DefaultCommandRegistry(IEnumerable<WebCommand> commands)
         {
             this.commands = commands;

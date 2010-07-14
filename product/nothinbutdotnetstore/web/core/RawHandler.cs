@@ -1,3 +1,4 @@
+using System;
 using System.Web;
 
 namespace nothinbutdotnetstore.web.core
@@ -6,10 +7,13 @@ namespace nothinbutdotnetstore.web.core
     {
         FrontController front_controller;
         RequestFactory request_factory;
+        private string value;
 
-        public RawHandler():this(new DefaultFrontController(),??)
+        public RawHandler()
+            : this(new DefaultFrontController(), new DefaultRequestFactory())
         {
         }
+        
 
         public RawHandler(FrontController front_controller, RequestFactory request_factory)
         {
@@ -27,4 +31,6 @@ namespace nothinbutdotnetstore.web.core
             get { return true; }
         }
     }
+
+    
 }
