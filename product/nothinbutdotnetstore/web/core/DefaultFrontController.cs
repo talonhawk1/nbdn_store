@@ -1,20 +1,17 @@
-using System;
-
 namespace nothinbutdotnetstore.web.core
 {
     public class DefaultFrontController : FrontController
     {
-        private CommandRegistry CommandRegistry;
+        CommandRegistry command_registry;
 
-        public DefaultFrontController(CommandRegistry commandRegistry)
+        public DefaultFrontController(CommandRegistry command_registry)
         {
-            this.CommandRegistry = commandRegistry;    
+            this.command_registry = command_registry;
         }
 
         public void process(Request request)
         {
-            var command = CommandRegistry.get_command_that_can_handle(request);
-            command.process(request);
+            command_registry.get_command_that_can_handle(request).process(request);
         }
     }
 }
