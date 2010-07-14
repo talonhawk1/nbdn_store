@@ -73,10 +73,13 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
+    <Compile Include="utility\ObjectMother.cs" />
+    <Compile Include="web\RawHandlerSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\nothinbutdotnetstore\nothinbutdotnetstore.csproj">
