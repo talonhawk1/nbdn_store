@@ -1,0 +1,2 @@
+﻿This is our own connection string of :
+data source=(local);Integrated Security=SSPI;Initial Catalog=nothinbutdotnetstore

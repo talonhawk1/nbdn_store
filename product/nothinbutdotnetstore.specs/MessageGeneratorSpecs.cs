@@ -9,7 +9,6 @@ namespace nothinbutdotnetstore.specs
         {
         }
 
-        [Subject(typeof(MessageGenerator))]
         public class when_a_message_is_sent : concern
         {
             static string result;
