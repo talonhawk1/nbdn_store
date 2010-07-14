@@ -15,9 +15,17 @@ namespace nothinbutdotnetstore.specs.web
          [Subject(typeof(DefaultWebCommand))]
          public class when_determining_whether_it_can_handle_a_request : concern
          {
-        
-             It first_observation = () =>        
-                 
+             Establish c = () =>
+             {
+
+             };
+
+             Because b = () => result = sut.can_handle(request);
+
+             It should_return_success_or_failure = () =>
+                 web_command.received(x => x.can_handle(request));
+
+             static WebCommand result;
          }
      }
  }
