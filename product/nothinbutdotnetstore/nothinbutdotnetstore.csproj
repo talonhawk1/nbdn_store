@@ -64,6 +64,7 @@
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\DefaultCommandRegistry.cs" />
     <Compile Include="web\core\DefaultFrontController.cs" />
+    <Compile Include="web\core\DefaultWebCommand.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\MissingWebCommand.cs" />
     <Compile Include="web\core\RawHandler.cs" />

@@ -1,12 +1,11 @@
-using System;
 using System.Web;
 
 namespace nothinbutdotnetstore.web.core
 {
     public class RawHandler : IHttpHandler
     {
-        private FrontController front_controller;
-        private RequestFactory request_factory;
+        FrontController front_controller;
+        RequestFactory request_factory;
 
         public RawHandler(FrontController front_controller, RequestFactory request_factory)
         {
@@ -21,7 +20,7 @@ namespace nothinbutdotnetstore.web.core
 
         public bool IsReusable
         {
-            get { throw new NotImplementedException(); }
+            get { return true; }
         }
     }
 }
