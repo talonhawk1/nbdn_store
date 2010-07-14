@@ -55,7 +55,7 @@ namespace nothinbutdotnetstore.specs.web
                  result = sut.get_command_that_can_handle(request);
 
 
-             It should_return_a_missing_web_web_command = () =>
+             It should_return_a_missing_web_command = () =>
                  result.ShouldBeAn<MissingWebCommand>();
 
              static WebCommand result;
