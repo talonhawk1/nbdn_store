@@ -13,7 +13,15 @@ namespace nothinbutdotnetstore.specs.web
          public abstract class concern : Observes<CommandRegistry,
                                              DefaultCommandRegistry>
          {
-        
+             Establish c = () =>
+             {
+                 all_web_commands = new List<WebCommand>();
+                 provide_a_basic_sut_constructor_argument<IEnumerable<WebCommand>>(all_web_commands);
+                 request = an<Request>();
+             };
+
+             protected static List<WebCommand> all_web_commands;
+             protected static Request request;
          }
 
          [Subject(typeof(DefaultCommandRegistry))]
@@ -22,11 +30,7 @@ namespace nothinbutdotnetstore.specs.web
 
              Establish c = () =>
              {
-                 all_web_commands = new List<WebCommand>();
-                 provide_a_basic_sut_constructor_argument<IEnumerable<WebCommand>>(all_web_commands);
-
                  command_that_can_process_request = an<WebCommand>();
-                 request = an<Request>();
                  all_web_commands.Add(command_that_can_process_request);
                  Enumerable.Range(1,100).each(x => all_web_commands.Add(an<WebCommand>()));
 
@@ -42,21 +46,11 @@ namespace nothinbutdotnetstore.specs.web
 
              static WebCommand result;
              static WebCommand command_that_can_process_request;
-             static Request request;
-             static IList<WebCommand> all_web_commands;
          }
 
          [Subject(typeof(DefaultCommandRegistry))]
          public class when_attempting_to_get_a_command_for_a_request_and_it_does_not_have_the_command : concern
          {
-
-             Establish c = () =>
-             {
-                 all_web_commands = new List<WebCommand>();
-                 provide_a_basic_sut_constructor_argument<IEnumerable<WebCommand>>(all_web_commands);
-                 request = an<Request>();
-             };
-
              Because b = () =>
                  result = sut.get_command_that_can_handle(request);
 
@@ -65,8 +59,6 @@ namespace nothinbutdotnetstore.specs.web
                  result.ShouldBeAn<MissingWebCommand>();
 
              static WebCommand result;
-             static Request request;
-             static IList<WebCommand> all_web_commands;
          }
      }
  }

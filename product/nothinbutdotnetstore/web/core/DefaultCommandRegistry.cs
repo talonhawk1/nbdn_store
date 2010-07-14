@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,18 +5,16 @@ namespace nothinbutdotnetstore.web.core
 {
     public class DefaultCommandRegistry : CommandRegistry
     {
-    	private readonly IEnumerable<WebCommand> _commands;
+        IEnumerable<WebCommand> commands;
 
-    	public WebCommand get_command_that_can_handle(Request request)
+        public WebCommand get_command_that_can_handle(Request request)
         {
-            return (from c in _commands
-							 where c.can_handle(request)
-							 select c).
-    		Single();
+            return commands.First(x => x.can_handle(request));
         }
-	  public DefaultCommandRegistry(IEnumerable<WebCommand> commands)
-	  {
-	  	_commands = commands;
-	  }
+
+        public DefaultCommandRegistry(IEnumerable<WebCommand> commands)
+        {
+            this.commands = commands;
+        }
     }
 }
