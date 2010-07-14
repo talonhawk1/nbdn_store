@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{922EF2FE-820B-4ED5-9D64-7D716E135719}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -61,9 +61,13 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="web\core\CommandRegistry.cs" />
+    <Compile Include="web\core\DefaultFrontController.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\RawHandler.cs" />
+    <Compile Include="web\core\Request.cs" />
     <Compile Include="web\core\RequestFactory.cs" />
+    <Compile Include="web\core\WebCommand .cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

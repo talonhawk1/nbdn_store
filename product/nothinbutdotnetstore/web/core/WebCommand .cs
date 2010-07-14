@@ -1,6 +1,6 @@
 namespace nothinbutdotnetstore.web.core
 {
-    public interface FrontController
+    public interface WebCommand 
     {
         void process(Request request);
     }
