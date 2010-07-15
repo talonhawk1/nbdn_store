@@ -64,6 +64,7 @@
     <Compile Include="infrastructure\logging\Log.cs" />
     <Compile Include="infrastructure\logging\Logger.cs" />
     <Compile Include="infrastructure\logging\LoggerFactory.cs" />
+    <Compile Include="infrastructure\logging\simple\TextWriterLoggerFactory.cs" />
     <Compile Include="infrastructure\logging\simple\TextWriterLogger.cs" />
     <Compile Include="model\Department.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />

@@ -107,18 +107,15 @@ div.supplement {
   </style>
 </head>
 <body>
-  <ul class="prev-next"><li class="failure">
-      <a href="#7">Go to first failed specification &dArr;</a>
-    </li>
+  <ul class="prev-next">
   </ul>
 <h1>
     nothinbutdotnetstore.specs
 </h1>
 <h2 class="count">
-  11 concerns,
-  13 contexts,
-  14 specifications,
-    <span class="failure">1 failure</span>
+  14 concerns,
+  16 contexts,
+  17 specifications
 </h2>
 
   <hr/>
@@ -133,7 +130,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="3">should return a missing web command</a>
+</h4><ul><li class="spec"><a name="6">should return a missing web command</a>
 
 
 
@@ -162,7 +159,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="2">should return the command that can handle the request</a>
+</h4><ul><li class="spec"><a name="5">should return the command that can handle the request</a>
 
 
 
@@ -180,7 +177,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="4">should tell the command that can process the request to process it</a>
+</h4><ul><li class="spec"><a name="7">should tell the command that can process the request to process it</a>
 
 
 
@@ -198,7 +195,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="6">should tell the view to process</a>
+</h4><ul><li class="spec"><a name="9">should tell the view to process</a>
 
 
 
@@ -216,14 +213,14 @@ div.supplement {
 </h3>
 <h4 class="count">
   2 specifications
-</h4><ul><li class="spec"><a name="8">should provide the page factory with the correct details for correct construction</a>
+</h4><ul><li class="spec"><a name="11">should provide the page factory with the correct details for correct construction</a>
 
 
 
 
  
 
-          </li><li class="spec"><a name="9">should create a view that has been populated with its data</a>
+          </li><li class="spec"><a name="12">should create a view that has been populated with its data</a>
 
 
 
@@ -241,7 +238,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="13">should make the determination by using its request criteria</a>
+</h4><ul><li class="spec"><a name="16">should make the determination by using its request criteria</a>
 
 
 
@@ -254,7 +251,25 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="14">should delegate the processing to an application specific command</a>
+</h4><ul><li class="spec"><a name="17">should delegate the processing to an application specific command</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  Log specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when providing access to the underlying logging api
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="2">should return a logger bound to the type of the calling type</a>
 
 
 
@@ -272,7 +287,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="5">should dispatch the request to the front controller</a>
+</h4><ul><li class="spec"><a name="8">should dispatch the request to the front controller</a>
 
 
 
@@ -290,7 +305,43 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="1">should be satisfied</a>
+</h4><ul><li class="spec"><a name="4">should be satisfied</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  TextWriterLogger specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when writing an information message
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="3">should write the message to its text writer</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  TextWriterLoggerFactory specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when creating textwriterlogger
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="1">should return a textwriterlogger</a>
 
 
 
@@ -308,34 +359,8 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="7">should return url with command name with store extension with params in query string</a>
+</h4><ul><li class="spec"><a name="10">should return url with command name with store extension with params in query string</a>
 
-  <div class="failure">
-    &lArr; FAILED
-    <ul class="prev-next">
-      <li class="failure">
-      </li>
-      <li class="failure">
-      </li>
-    </ul>
-  </div>
-  <p class="exception_type">
-    TargetInvocationException
-  </p>
-  <pre class="exception_message">System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---&gt; System.InvalidCastException: Unable to cast object of type 'System.Linq.Expressions.UnaryExpression' to type 'System.Linq.Expressions.MemberExpression'.
-   at nothinbutdotnetstore.web.core.helpers.Url.for_command[T,T1](Expression`1[] property_setters) in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore\web\core\helpers\Url.cs:line 16
-   at nothinbutdotnetstore.specs.web.UrlHelperSpecs.when_creating_a_url_for_a_command.&lt;.ctor&gt;b__1() in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore.specs\web\UrlHelperSpecs.cs:line 21
-   --- End of inner exception stack trace ---
-   at System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct&amp; sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
-   at System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
-   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
-   at System.Delegate.DynamicInvokeImpl(Object[] args)
-   at System.Delegate.DynamicInvoke(Object[] args)
-   at Machine.Specifications.Utility.RandomExtensionMethods.&lt;InvokeAll&gt;b__1(Delegate item) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 32
-   at Machine.Specifications.Utility.RandomExtensionMethods.Each[T](IEnumerable`1 enumerable, Action`1 action) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 12
-   at Machine.Specifications.Utility.RandomExtensionMethods.InvokeAll(IEnumerable`1 actions) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 32
-   at Machine.Specifications.Utility.RandomExtensionMethods.InvokeAll(IEnumerable`1 becauseActions) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 17
-   at Machine.Specifications.Model.Context.EstablishContext() in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Model\Context.cs:line 77</pre>
 
 
 
@@ -352,7 +377,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="10">should tell the response engine to display the main departments</a>
+</h4><ul><li class="spec"><a name="13">should tell the response engine to display the main departments</a>
 
 
 
@@ -370,7 +395,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="11">should tell the response engine to display the products</a>
+</h4><ul><li class="spec"><a name="14">should tell the response engine to display the products</a>
 
 
 
@@ -388,7 +413,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="12">should tell the response engine to display the sub departments of a department</a>
+</h4><ul><li class="spec"><a name="15">should tell the response engine to display the sub departments of a department</a>
 
 
 

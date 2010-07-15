@@ -1,22 +1,23 @@
-using System;
 using System.IO;
-using System.Text;
 
 namespace nothinbutdotnetstore.infrastructure.logging.simple
 {
     public class TextWriterLogger : Logger
     {
-    	private readonly TextWriter Tw;
-    	private readonly StringBuilder Sb;
+        private readonly TextWriter _textWriter;
 
-    	public TextWriterLogger(TextWriter tw)
-    	{
-    		Tw = tw;
-    	}
-
-    	public void informational(string message)
+        public TextWriterLogger(TextWriter textWriter)
         {
-			Tw.WriteLine(message);
+            _textWriter = textWriter;
         }
+
+        #region Logger Members
+
+        public void informational(string message)
+        {
+            _textWriter.WriteLine(message);
+        }
+
+        #endregion
     }
 }

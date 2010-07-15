@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using nothinbutdotnetstore.infrastructure;
-using nothinbutdotnetstore.infrastructure.logging;
 using nothinbutdotnetstore.web.core.stubs;
 
 namespace nothinbutdotnetstore.web.core
@@ -10,7 +8,7 @@ namespace nothinbutdotnetstore.web.core
     {
         IEnumerable<WebCommand> commands;
 
-        public DefaultCommandRegistry():this(new StubFakeCommandSet())
+        public DefaultCommandRegistry() : this(new StubFakeCommandSet())
         {
         }
 
@@ -21,10 +19,8 @@ namespace nothinbutdotnetstore.web.core
 
         public WebCommand get_command_that_can_handle(Request request)
         {
-            Log.an.informational("sdfsdfsdf");
-            return commands.FirstOrDefault(x => x.can_handle(request)) ?? 
+            return commands.FirstOrDefault(x => x.can_handle(request)) ??
                 new MissingWebCommand();
-
         }
     }
 }

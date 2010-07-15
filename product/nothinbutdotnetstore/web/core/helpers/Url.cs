@@ -33,8 +33,8 @@ namespace nothinbutdotnetstore.web.core.helpers
 
     public class UrlBuilder<Command, Model> : UrlBuilder where Command : ApplicationCommand
     {
-        readonly Model model;
-        readonly IDictionary<string, string> parameters;
+        Model model;
+        IDictionary<string, string> parameters;
         UrlBuilder inner_builder;
 
         public UrlBuilder(Model model)
