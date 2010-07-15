@@ -1,4 +1,6 @@
 using System;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace nothinbutdotnetstore.infrastructure
 {
@@ -9,6 +11,14 @@ namespace nothinbutdotnetstore.infrastructure
             throw new NotImplementedException("This needs to be configured by the application startup pipeline");
         };
 
-        public static Logger an;
+        public static Logger an
+        {
+            get
+            {
+                var frame = new StackFrame(1);
+                MethodBase method = frame.GetMethod();
+                return factory_resolver().get_logger_for(method.ReflectedType);
+            }
+        }
     }
 }
