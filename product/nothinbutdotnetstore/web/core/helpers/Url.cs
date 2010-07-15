@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using nothinbutdotnetstore.infrastructure.extensions;
 
 namespace nothinbutdotnetstore.web.core.helpers
 {
@@ -47,10 +49,7 @@ namespace nothinbutdotnetstore.web.core.helpers
         private UrlBuilder(Model model, IEnumerable<KeyValuePair<string, string>> parameters, 
             string new_field, string new_value) : this(model)
         {
-            foreach (var parameter in parameters)
-            {
-                this.parameters.Add(parameter);
-            }
+            parameters.for_each(parameter => this.parameters.Add(parameter));
             this.parameters.Add(new_field, new_value);
         }
 
@@ -61,11 +60,11 @@ namespace nothinbutdotnetstore.web.core.helpers
                 return base_url;
 
             var query_string = new StringBuilder();
-            foreach (var parameter in parameters)
+            parameters.for_each(parameter =>
             {
                 query_string.Append(query_string.Length == 0 ? "?" : "&");
                 query_string.AppendFormat("{0}={1}", parameter.Key, parameter.Value);
-            }
+            });
             return string.Format("{0}{1}", base_url, query_string);
         }
 

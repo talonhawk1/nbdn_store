@@ -61,6 +61,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\extensions\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\logging\Log.cs" />
     <Compile Include="infrastructure\logging\Logger.cs" />
     <Compile Include="infrastructure\logging\LoggerFactory.cs" />
