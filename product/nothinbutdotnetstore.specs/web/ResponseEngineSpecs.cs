@@ -16,13 +16,6 @@ namespace nothinbutdotnetstore.specs.web
 
          }
 
-         public class Logger
-         {
-            public static void info(string message)
-            {
-
-            } 
-         }
 
          [Subject(typeof(DefaultResponseEngine))]
          public class when_displaying_a_view_model : concern
