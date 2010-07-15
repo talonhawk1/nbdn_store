@@ -1,6 +1,5 @@
 using System;
 using System.Web;
-using System.Web.Configuration;
 
 namespace nothinbutdotnetstore.web.core
 {
@@ -14,7 +13,7 @@ namespace nothinbutdotnetstore.web.core
                 "You need to provide a context resolver at application startup");
         };
 
-        public DefaultResponseEngine():this(new DefaultViewFactory())
+        public DefaultResponseEngine() : this(new DefaultViewFactory())
         {
             context = () => HttpContext.Current;
         }

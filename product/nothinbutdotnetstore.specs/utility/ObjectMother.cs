@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Web;
 
@@ -15,9 +16,25 @@ namespace nothinbutdotnetstore.specs.utility
             return new HttpResponse(new StringWriter());
         }
 
-        static HttpRequest create_request()
+        public static RequestBuilder create_request()
         {
-            return new HttpRequest("blah.aspx", "http://localhost/blah.aspx", string.Empty);
+            return new RequestBuilder();
+        }
+
+        public class RequestBuilder
+        {
+            string query_string = string.Empty;
+
+            public static implicit operator HttpRequest(RequestBuilder builder)
+            {
+                return new HttpRequest("blah.aspx", "http://localhost/blah.aspx", builder.query_string);
+            }
+
+            public RequestBuilder with_query_string(string format)
+            {
+                query_string = format;
+                return  this;
+            }
         }
     }
 }

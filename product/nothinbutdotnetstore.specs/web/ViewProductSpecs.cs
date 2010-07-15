@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Web;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.model;
+using nothinbutdotnetstore.specs.utility;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.web.application;
 using nothinbutdotnetstore.web.core;
@@ -21,25 +23,31 @@ namespace nothinbutdotnetstore.specs.web
         {
             Establish c = () =>
             {
-                catalog_tasks = the_dependency<ProductTasks>();
+                catalog_tasks = the_dependency<CatalogTasks>();
                 response_engine = the_dependency<ResponseEngine>();
                 request = an<Request>();
+                
+                products_in_the_department = new List<Product>();
+                department_id = 23;
 
-                main_products = new List<Product>();
 
-                catalog_tasks.Stub(x => x.get_all_products_for_department(Arg<int>.Is.Anything)).Return(main_products);
+                request.Stub(x => x.get_value_for(InputElements.department.id)).Return(department_id.ToString());
+
+                catalog_tasks.Stub(x => x.get_all_products_for_department(department_id)).Return(products_in_the_department);
+
             };
 
             Because b = () =>
                 sut.process(request);
 
             It should_tell_the_response_engine_to_display_the_products = () =>
-                response_engine.received(x => x.display(main_products));
+                response_engine.received(x => x.display(products_in_the_department));
 
             static ResponseEngine response_engine;
-            static IEnumerable<Product> main_products;
+            static IEnumerable<Product> products_in_the_department;
+            static CatalogTasks catalog_tasks;
             static Request request;
-            static ProductTasks catalog_tasks;
+            static int department_id;
         }
     }
 }

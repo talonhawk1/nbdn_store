@@ -7,7 +7,7 @@ namespace nothinbutdotnetstore.web.core.stubs
     {
         public Request create_from(HttpContext http_context)
         {
-            return delegate { return http_context.Request; };
+            throw new NotImplementedException();
         }
     }
 }
