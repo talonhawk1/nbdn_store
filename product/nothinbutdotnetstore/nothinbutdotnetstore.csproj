@@ -61,9 +61,10 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="infrastructure\Log.cs" />
-    <Compile Include="infrastructure\Logger.cs" />
-    <Compile Include="infrastructure\LoggerFactory.cs" />
+    <Compile Include="infrastructure\logging\Log.cs" />
+    <Compile Include="infrastructure\logging\Logger.cs" />
+    <Compile Include="infrastructure\logging\LoggerFactory.cs" />
+    <Compile Include="infrastructure\logging\simple\TextWriterLogger.cs" />
     <Compile Include="model\Department.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
@@ -118,6 +119,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="infrastructure\logging\log4net\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
