@@ -65,6 +65,7 @@
     <Compile Include="tasks\CatalogTasks.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
     <Compile Include="web\application\ViewMainDepartments.cs" />
+    <Compile Include="web\application\ViewSubDepartments.cs" />
     <Compile Include="web\application\ViewSubDepartmentsForDepartment.cs" />
     <Compile Include="model\Product.cs" />
     <Compile Include="tasks\ProductTasks.cs" />
