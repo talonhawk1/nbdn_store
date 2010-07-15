@@ -17,7 +17,7 @@ namespace nothinbutdotnetstore.web.application
 
         public void process(Request request)
         {
-            throw new NotImplementedException();
+            response_engine.display(catalog_tasks.get_all_sub_departments_from(request.get_query_string()));
         }
     }
 }

@@ -84,10 +84,11 @@
     <Compile Include="web\ViewFactorySpecs.cs" />
     <Compile Include="web\ViewMainDepartmentsSpecs.cs" />
 <<<<<<< HEAD
+    <Compile Include="web\ViewSubDepartmentsForDepartmentSpecs.cs" />
     <Compile Include="web\ViewProductSpecs.cs" />
 =======
-    <Compile Include="web\ViewSubDepartmentsForDepartmentSpecs.cs" />
->>>>>>> dougb
+    <Compile Include="web\ViewSubDepartmentSpecs.cs" />
+>>>>>>> ice
     <Compile Include="web\WebCommandSpecs.cs" />
   </ItemGroup>
   <ItemGroup>

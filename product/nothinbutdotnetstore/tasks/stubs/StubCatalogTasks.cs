@@ -21,5 +21,10 @@ namespace nothinbutdotnetstore.tasks.stubs
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<Department> get_all_sub_departments_in(Department department)
+        {
+            return Enumerable.Range(1, 100).Select(x => new Department { name = x.ToString("Sub Department 0") });
+        }
     }
 }
