@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq.Expressions;
 using System.Text;
-using nothinbutdotnetstore.model;
 
 namespace nothinbutdotnetstore.web.core.helpers
 {
@@ -15,32 +13,39 @@ namespace nothinbutdotnetstore.web.core.helpers
         }
     }
 
-    public class UrlBuilder<Command> where Command : ApplicationCommand
+    public interface UrlBuilder
+    {
+        string get_url();
+    }
+
+    public class UrlBuilder<Command> : UrlBuilder where Command : ApplicationCommand
     {
         public virtual string get_url()
         {
             return string.Format("{0}.store", typeof (Command).Name);
         }
 
-        public UrlBuilder<Command, Model> with_model<Model>(Model model)
+        public UrlBuilder<Command, Model> with_input_model<Model>(Model model)
         {
             return new UrlBuilder<Command, Model>(model);
         }
     }
 
-    public class UrlBuilder<Command, Model> : UrlBuilder<Command> where Command : ApplicationCommand
+    public class UrlBuilder<Command, Model> : UrlBuilder where Command : ApplicationCommand
     {
         readonly Model model;
         readonly IDictionary<string, string> parameters;
+        UrlBuilder inner_builder;
 
         public UrlBuilder(Model model)
         {
+            inner_builder = new UrlBuilder<Command>();
             this.model = model;
-            this.parameters = new Dictionary<string, string>();
+            parameters = new Dictionary<string, string>();
         }
 
-        private UrlBuilder(Model model, IDictionary<string,string> parameters, string new_field, string new_value)
-            : this(model)
+        private UrlBuilder(Model model, IEnumerable<KeyValuePair<string, string>> parameters, 
+            string new_field, string new_value) : this(model)
         {
             foreach (var parameter in parameters)
             {
@@ -49,10 +54,11 @@ namespace nothinbutdotnetstore.web.core.helpers
             this.parameters.Add(new_field, new_value);
         }
 
-        public override string get_url()
+        public string get_url()
         {
+            var base_url = inner_builder.get_url();            
             if (parameters.Count == 0)
-                return base.get_url();
+                return base_url;
 
             var query_string = new StringBuilder();
             foreach (var parameter in parameters)
@@ -60,7 +66,7 @@ namespace nothinbutdotnetstore.web.core.helpers
                 query_string.Append(query_string.Length == 0 ? "?" : "&");
                 query_string.AppendFormat("{0}={1}", parameter.Key, parameter.Value);
             }
-            return string.Format("{0}{1}", base.get_url(), query_string);
+            return string.Format("{0}{1}", base_url, query_string);
         }
 
         public UrlBuilder<Command, Model> with_parameter<ReturnType>(Expression<Func<Model, ReturnType>> func)
