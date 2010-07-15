@@ -1,7 +1,6 @@
+using System.Web;
+
 namespace nothinbutdotnetstore.web.core
 {
-    public interface Request
-    {
-        
-    }
+    public delegate HttpRequest Request();
 }

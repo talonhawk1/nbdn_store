@@ -3,9 +3,8 @@ using nothinbutdotnetstore.model;
 
 namespace nothinbutdotnetstore.tasks
 {
-    public interface CatalogTasks
+    public interface ProductTasks
     {
-        IEnumerable<Department> get_all_main_departments();
-        
+        IEnumerable<Product> get_all_products_for_department(int id);
     }
 }

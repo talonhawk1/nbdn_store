@@ -63,8 +63,12 @@
   <ItemGroup>
     <Compile Include="model\Department.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
+    <Compile Include="model\Product.cs" />
+    <Compile Include="tasks\ProductTasks.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
+    <Compile Include="tasks\stubs\StubProductTasks.cs" />
     <Compile Include="web\application\ViewMainDepartments.cs" />
+    <Compile Include="web\application\ViewProducts.cs" />
     <Compile Include="web\core\ApplicationCommand.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\Context.cs" />
@@ -76,7 +80,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="web\core\DefaultWebCommand.cs" />
-    <Compile Include="web\core\Department.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\MissingWebCommand.cs" />
     <Compile Include="web\core\PageFactory.cs" />

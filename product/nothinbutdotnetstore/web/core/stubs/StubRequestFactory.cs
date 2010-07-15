@@ -1,3 +1,4 @@
+using System;
 using System.Web;
 
 namespace nothinbutdotnetstore.web.core.stubs
@@ -6,11 +7,7 @@ namespace nothinbutdotnetstore.web.core.stubs
     {
         public Request create_from(HttpContext http_context)
         {
-            return new StubRequest();
-        }
-
-        class StubRequest : Request
-        {
+            return delegate { return http_context.Request; };
         }
     }
 }

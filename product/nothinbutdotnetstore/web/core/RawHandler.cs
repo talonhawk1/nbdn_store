@@ -8,7 +8,6 @@ namespace nothinbutdotnetstore.web.core
     {
         FrontController front_controller;
         RequestFactory request_factory;
-        private string value;
 
         public RawHandler():this(new DefaultFrontController(),new StubRequestFactory())
         {
