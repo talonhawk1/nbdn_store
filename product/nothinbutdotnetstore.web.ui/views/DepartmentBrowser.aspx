@@ -4,11 +4,7 @@ Inherits="nothinbutdotnetstore.web.ui.views.DepartmentBrowser" MasterPageFile="S
 CodeFile="DepartmentBrowser.aspx.cs" %>
 <%@ Import Namespace="nothinbutdotnetstore.model" %>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
-<%
-    var handler = new RawHandler();
-    handler.ProcessRequest(HttpContext.Current);
-    
- %>
+
     <p class="ListHead">Select An Department</p>
 
             <table>            
@@ -19,7 +15,7 @@ CodeFile="DepartmentBrowser.aspx.cs" %>
 	
         	<tr class="ListItem">
                		 <td>                     
-        <%= department.name%>
+        <a href="DepartmentDetails.store?id=1"><%= department.name%></a>
 	<%
      }%>
 	    </table>            

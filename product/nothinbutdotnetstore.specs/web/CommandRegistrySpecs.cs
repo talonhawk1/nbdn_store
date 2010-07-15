@@ -2,6 +2,7 @@
  using System.Linq;
  using Machine.Specifications;
  using Machine.Specifications.DevelopWithPassion.Rhino;
+ using nothinbutdotnetstore.web.application;
  using nothinbutdotnetstore.web.core;
  using Machine.Specifications.DevelopWithPassion.Extensions;
  using Rhino.Mocks;
@@ -18,6 +19,8 @@ namespace nothinbutdotnetstore.specs.web
                  all_web_commands = new List<WebCommand>();
                  provide_a_basic_sut_constructor_argument<IEnumerable<WebCommand>>(all_web_commands);
                  request = an<Request>();
+
+                              
              };
 
              protected static List<WebCommand> all_web_commands;

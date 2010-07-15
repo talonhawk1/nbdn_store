@@ -73,6 +73,7 @@
     <Compile Include="web\core\ApplicationCommand.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\Context.cs" />
+    <Compile Include="web\core\criteria\StringContainsNameOfCommand.cs" />
     <Compile Include="web\core\DefaultCommandRegistry.cs" />
     <Compile Include="web\core\DefaultFrontController.cs" />
     <Compile Include="web\core\DefaultResponseEngine.cs" />
