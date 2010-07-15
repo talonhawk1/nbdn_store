@@ -107,15 +107,18 @@ div.supplement {
   </style>
 </head>
 <body>
-  <ul class="prev-next">
+  <ul class="prev-next"><li class="failure">
+      <a href="#7">Go to first failed specification &dArr;</a>
+    </li>
   </ul>
 <h1>
     nothinbutdotnetstore.specs
 </h1>
 <h2 class="count">
-  10 concerns,
-  12 contexts,
-  13 specifications
+  11 concerns,
+  13 contexts,
+  14 specifications,
+    <span class="failure">1 failure</span>
 </h2>
 
   <hr/>
@@ -213,14 +216,14 @@ div.supplement {
 </h3>
 <h4 class="count">
   2 specifications
-</h4><ul><li class="spec"><a name="7">should provide the page factory with the correct details for correct construction</a>
+</h4><ul><li class="spec"><a name="8">should provide the page factory with the correct details for correct construction</a>
 
 
 
 
  
 
-          </li><li class="spec"><a name="8">should create a view that has been populated with its data</a>
+          </li><li class="spec"><a name="9">should create a view that has been populated with its data</a>
 
 
 
@@ -238,7 +241,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="12">should make the determination by using its request criteria</a>
+</h4><ul><li class="spec"><a name="13">should make the determination by using its request criteria</a>
 
 
 
@@ -251,7 +254,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="13">should delegate the processing to an application specific command</a>
+</h4><ul><li class="spec"><a name="14">should delegate the processing to an application specific command</a>
 
 
 
@@ -296,6 +299,50 @@ div.supplement {
 
           </li>
         </ul><h2 class="concern">
+  Url specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when creating a url for a command
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="7">should return url with command name with store extension with params in query string</a>
+
+  <div class="failure">
+    &lArr; FAILED
+    <ul class="prev-next">
+      <li class="failure">
+      </li>
+      <li class="failure">
+      </li>
+    </ul>
+  </div>
+  <p class="exception_type">
+    TargetInvocationException
+  </p>
+  <pre class="exception_message">System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---&gt; System.InvalidCastException: Unable to cast object of type 'System.Linq.Expressions.UnaryExpression' to type 'System.Linq.Expressions.MemberExpression'.
+   at nothinbutdotnetstore.web.core.helpers.Url.for_command[T,T1](Expression`1[] property_setters) in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore\web\core\helpers\Url.cs:line 16
+   at nothinbutdotnetstore.specs.web.UrlHelperSpecs.when_creating_a_url_for_a_command.&lt;.ctor&gt;b__1() in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore.specs\web\UrlHelperSpecs.cs:line 21
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct&amp; sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   at System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at System.Delegate.DynamicInvoke(Object[] args)
+   at Machine.Specifications.Utility.RandomExtensionMethods.&lt;InvokeAll&gt;b__1(Delegate item) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 32
+   at Machine.Specifications.Utility.RandomExtensionMethods.Each[T](IEnumerable`1 enumerable, Action`1 action) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 12
+   at Machine.Specifications.Utility.RandomExtensionMethods.InvokeAll(IEnumerable`1 actions) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 32
+   at Machine.Specifications.Utility.RandomExtensionMethods.InvokeAll(IEnumerable`1 becauseActions) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 17
+   at Machine.Specifications.Model.Context.EstablishContext() in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Model\Context.cs:line 77</pre>
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
   ViewMainDepartments specifications
 </h2>
 <h3 class="count">
@@ -305,7 +352,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="9">should tell the response engine to display the main departments</a>
+</h4><ul><li class="spec"><a name="10">should tell the response engine to display the main departments</a>
 
 
 
@@ -323,7 +370,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="10">should tell the response engine to display the products</a>
+</h4><ul><li class="spec"><a name="11">should tell the response engine to display the products</a>
 
 
 
@@ -341,7 +388,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="11">should tell the response engine to display the sub departments of a department</a>
+</h4><ul><li class="spec"><a name="12">should tell the response engine to display the sub departments of a department</a>
 
 
 
