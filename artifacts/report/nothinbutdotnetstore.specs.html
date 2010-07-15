@@ -113,24 +113,24 @@ div.supplement {
     nothinbutdotnetstore.specs
 </h1>
 <h2 class="count">
-  1 concern,
-  1 context,
-  1 specification
+  7 concerns,
+  9 contexts,
+  10 specifications
 </h2>
 
   <hr/>
   <hr/>
 <h2 class="concern">
-  RawHandler specifications
+  DefaultCommandRegistry specifications
 </h2>
 <h3 class="count">
-  1 context, 1 specification
+  2 contexts, 2 specifications
 </h3><h3 class="context">
-  when processing an incoming http context
+  when attempting to get a command for a request and it does not have the command
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="1">should dispatch the request to the front controller</a>
+</h4><ul><li class="spec"><a name="2">should return a missing web command</a>
 
 
 
@@ -152,6 +152,147 @@ div.supplement {
     }
   };
 </script> 
+
+          </li>
+        </ul><h3 class="context">
+  when getting a command that can handle a request and it has the command
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="1">should return the command that can handle the request</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DefaultFrontController specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when processing a request
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="3">should tell the command that can process the request to process it</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DefaultResponseEngine specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when displaying a view model
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="5">should tell the view to process</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DefaultViewFactory specifications
+</h2>
+<h3 class="count">
+  1 context, 2 specifications
+</h3><h3 class="context">
+  when creating a view from a view model
+</h3>
+<h4 class="count">
+  2 specifications
+</h4><ul><li class="spec"><a name="6">should provide the page factory with the correct details for correct construction</a>
+
+
+
+
+ 
+
+          </li><li class="spec"><a name="7">should create a view that has been populated with its data</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DefaultWebCommand specifications
+</h2>
+<h3 class="count">
+  2 contexts, 2 specifications
+</h3><h3 class="context">
+  when determining whether it can handle a request
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="9">should make the determination by using its request criteria</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h3 class="context">
+  when processing a request
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="10">should delegate the processing to an application specific command</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  RawHandler specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when processing an incoming http context
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="4">should dispatch the request to the front controller</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  ViewMainDepartments specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when vieing the list of main departments in the store
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="8">should tell the response engine to display the main departments</a>
+
+
+
+
+ 
 
           </li>
         </ul>

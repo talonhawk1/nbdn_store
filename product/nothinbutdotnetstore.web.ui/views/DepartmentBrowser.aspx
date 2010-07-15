@@ -1,7 +1,7 @@
 <%@ MasterType VirtualPath="Store.master" %>
 <%@ Page Language="C#" AutoEventWireup="true" 
-Inherits="System.Web.UI.Page" MasterPageFile="Store.master" %>
-<%@ Import Namespace="System.Collections.Generic" %>
+Inherits="nothinbutdotnetstore.web.ui.views.DepartmentBrowser" MasterPageFile="Store.master"
+CodeFile="DepartmentBrowser.aspx.cs" %>
 <%@ Import Namespace="nothinbutdotnetstore.model" %>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
 <%
@@ -12,7 +12,7 @@ Inherits="System.Web.UI.Page" MasterPageFile="Store.master" %>
     <p class="ListHead">Select An Department</p>
 
             <table>            
-		<% foreach (var department in ((IEnumerable<Department>)this.Context.Items["blah"]))
+		<% foreach (var department in this.model)
      {
 
 %>

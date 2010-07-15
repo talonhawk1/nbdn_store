@@ -67,14 +67,19 @@
     <Compile Include="web\application\ViewMainDepartments.cs" />
     <Compile Include="web\core\ApplicationCommand.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
+    <Compile Include="web\core\Context.cs" />
     <Compile Include="web\core\DefaultCommandRegistry.cs" />
     <Compile Include="web\core\DefaultFrontController.cs" />
-    <Compile Include="web\core\DepartmentRequest.cs" />
-    <Compile Include="web\core\DefaultRequestFactory.cs" />
+    <Compile Include="web\core\DefaultResponseEngine.cs" />
+    <Compile Include="web\core\DefaultViewFactory.cs" />
+    <Compile Include="web\core\DefaultViewFor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="web\core\DefaultWebCommand.cs" />
     <Compile Include="web\core\Department.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\MissingWebCommand.cs" />
+    <Compile Include="web\core\PageFactory.cs" />
     <Compile Include="web\core\RawHandler.cs" />
     <Compile Include="web\core\Request.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
@@ -82,7 +87,10 @@
     <Compile Include="web\core\ResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubFakeCommandSet.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
-    <Compile Include="web\core\stubs\StubResponseEngine.cs" />
+    <Compile Include="web\core\stubs\StubViewRegistry.cs" />
+    <Compile Include="web\core\ViewFor.cs" />
+    <Compile Include="web\core\ViewFactory.cs" />
+    <Compile Include="web\core\ViewRegistry.cs" />
     <Compile Include="web\core\WebCommand .cs" />
   </ItemGroup>
   <ItemGroup>
