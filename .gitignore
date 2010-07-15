@@ -19,4 +19,5 @@ artifacts/*.*
 /product/config/log4net.config.xml
 /product/config/hibernate.cfg.xml
 /product/*.web.ui/Bin
+*.orig
 

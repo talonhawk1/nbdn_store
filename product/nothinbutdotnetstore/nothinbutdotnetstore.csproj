@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="web\core\DefaultWebCommand.cs" />
     <Compile Include="web\core\FrontController.cs" />
+    <Compile Include="web\core\helpers\Url.cs" />
     <Compile Include="web\core\MissingWebCommand.cs" />
     <Compile Include="web\core\PageFactory.cs" />
     <Compile Include="web\core\RawHandler.cs" />
