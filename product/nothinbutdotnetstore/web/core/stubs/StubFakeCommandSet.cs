@@ -16,7 +16,7 @@ namespace nothinbutdotnetstore.web.core.stubs
             yield return new DefaultWebCommand(x => true,
                                                new ViewMainDepartments());
             yield return new DefaultWebCommand(x => true,
-                                               new ViewSubDepartments());
+                                               new ViewSubDepartments(null,null));
             yield return new DefaultWebCommand(x => true,
                                                new ViewProducts());
         }

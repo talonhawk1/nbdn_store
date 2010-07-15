@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using nothinbutdotnetstore.model;
@@ -17,14 +16,9 @@ namespace nothinbutdotnetstore.tasks.stubs
             return Enumerable.Range(1, 1000).Select(x => new Product {name = x.ToString("Product 0")});
         }
 
-        public IEnumerable<Department> get_all_sub_departments_from(string departmentName)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<Department> get_all_sub_departments_in(Department department)
         {
-            return Enumerable.Range(1, 100).Select(x => new Department { name = x.ToString("Sub Department 0") });
+            return Enumerable.Range(1, 100).Select(x => new Department {name = x.ToString("Sub Department 0")});
         }
     }
 }
