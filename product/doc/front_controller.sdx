@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram>
+<source><![CDATA[#![Front Controller Flow]
+browser:Actor
+server:Server
+front_controller:FrontController
+command_registry:CommandRegistry
+request_factory:RequestFactory
+/request:Request
+commands:IEnumerable<WebCommand>
+/missing:MissingWebCommand
+command:DefaultWebCommand
+request_criteria:RequestCriteria
+application_command:ApplicationCommand
+response_engine:ResponseEngine
+
+browser:server.process(http_context)
+server:request=request_factory.create_from(http_context)
+request_factory:request=request.new()
+server:front_controller.process(request)
+front_controller:command=command_registry.get_command_to_handle(request)
+
+[c:loop while there is a next command]
+  command_registry:command=commands.next
+  command_registry:command.can_handle(request)
+  command:request_criteria.matches(request) 
+  [c:alt can the command handle the request]
+    command_registry:return the command
+    --[else]
+    command_registry:missing=missing.new()
+  [/c]	
+[/c]
+
+front_controller:command.process(request)
+command:application_command.process(request)
+application_command:response_engine.display(view_model)]]></source>
+<configuration>
+<property name="actorWidth" value="25"/>
+<property name="arrowSize" value="6"/>
+<property name="colorizeThreads" value="true"/>
+<property name="destructorWidth" value="30"/>
+<property family="Dialog" name="font" size="12" style="0"/>
+<property name="fragmentMargin" value="8"/>
+<property name="fragmentPadding" value="10"/>
+<property name="fragmentTextPadding" value="3"/>
+<property name="generateActorAnswers" value="false"/>
+<property name="glue" value="10"/>
+<property name="headHeight" value="35"/>
+<property name="headLabelPadding" value="5"/>
+<property name="headWidth" value="100"/>
+<property name="initialSpace" value="10"/>
+<property name="leftMargin" value="5"/>
+<property name="lineWrap" value="false"/>
+<property name="lowerMargin" value="5"/>
+<property name="mainLifelineWidth" value="8"/>
+<property name="messageLabelSpace" value="3"/>
+<property name="messagePadding" value="6"/>
+<property name="noteMargin" value="6"/>
+<property name="notePadding" value="6"/>
+<property name="opaqueMessageText" value="false"/>
+<property name="rightMargin" value="5"/>
+<property name="selfMessageHorizontalSpace" value="15"/>
+<property name="separatorBottomMargin" value="8"/>
+<property name="separatorTopMargin" value="15"/>
+<property name="spaceBeforeActivation" value="2"/>
+<property name="spaceBeforeAnswerToSelf" value="10"/>
+<property name="spaceBeforeConstruction" value="6"/>
+<property name="spaceBeforeSelfMessage" value="7"/>
+<property name="subLifelineWidth" value="6"/>
+<property name="threadNumbersVisible" value="false"/>
+<property name="threaded" value="false"/>
+<property name="upperMargin" value="5"/>
+<property name="verticallySplit" value="true"/>
+</configuration>
+</diagram>

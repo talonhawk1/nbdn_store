@@ -14,9 +14,7 @@ CodeFile="DepartmentBrowser.aspx.cs" %>
 	
         	<tr class="ListItem">
                		 <td>                     
-        <%=department.name%>
-                	</td>
-           	 </tr>        
+        <%= department.name%>
 	<%
      }%>
 	    </table>            
