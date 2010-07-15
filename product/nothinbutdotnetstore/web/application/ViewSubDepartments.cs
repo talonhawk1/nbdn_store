@@ -8,18 +8,16 @@ namespace nothinbutdotnetstore.web.application
     {
         ResponseEngine response_engine;
         CatalogTasks catalog;
-        Department department;
 
-        public ViewSubDepartments(ResponseEngine response_engine, CatalogTasks catalog, Department department)
+        public ViewSubDepartments(ResponseEngine response_engine, CatalogTasks catalog)
         {
             this.response_engine = response_engine;
             this.catalog = catalog;
-            this.department = department;
         }
 
         public void process(Request request)
         {
-            response_engine.display(catalog.get_all_sub_departments_in(department));
+            response_engine.display(catalog.get_all_sub_departments_in(request.map<Department>()));
         }
     }
 }

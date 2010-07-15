@@ -3,6 +3,7 @@ using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.model;
 using nothinbutdotnetstore.tasks;
+using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.application;
 using nothinbutdotnetstore.web.core;
 using Rhino.Mocks;
@@ -28,6 +29,8 @@ namespace nothinbutdotnetstore.specs.web
                 sub_departments = new List<Department>();
                 
                 catalog_tasks.Stub(x => x.get_all_sub_departments_in(parent_department)).Return(sub_departments);
+
+                request.Stub(request1 => request1.map<Department>()).Return(parent_department);
 
                 provide_a_basic_sut_constructor_argument(parent_department);
             };

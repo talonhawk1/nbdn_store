@@ -24,13 +24,13 @@ namespace nothinbutdotnetstore.specs.web
                 catalog_tasks = the_dependency<CatalogTasks>();
                 response_engine = the_dependency<ResponseEngine>();
                 request = an<Request>();
+                parent_department = new Department();
 
                 products_in_the_department = new List<Product>();
-                department_id = 23;
 
-                request.Stub(x => x.get_value_for(InputElements.department.id)).Return(department_id.ToString());
+                request.Stub(request1 => request1.map<Department>()).Return(parent_department);
 
-                catalog_tasks.Stub(x => x.get_all_products_for_department(department_id)).Return(
+                catalog_tasks.Stub(x => x.get_all_products_in(parent_department)).Return(
                     products_in_the_department);
             };
 
@@ -44,7 +44,7 @@ namespace nothinbutdotnetstore.specs.web
             static IEnumerable<Product> products_in_the_department;
             static CatalogTasks catalog_tasks;
             static Request request;
-            static int department_id;
+            static Department parent_department;
         }
     }
 }
