@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using System.Web;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.model;
-using nothinbutdotnetstore.specs.utility;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.web.application;
 using nothinbutdotnetstore.web.core;
@@ -26,15 +24,14 @@ namespace nothinbutdotnetstore.specs.web
                 catalog_tasks = the_dependency<CatalogTasks>();
                 response_engine = the_dependency<ResponseEngine>();
                 request = an<Request>();
-                
+
                 products_in_the_department = new List<Product>();
                 department_id = 23;
 
-
                 request.Stub(x => x.get_value_for(InputElements.department.id)).Return(department_id.ToString());
 
-                catalog_tasks.Stub(x => x.get_all_products_for_department(department_id)).Return(products_in_the_department);
-
+                catalog_tasks.Stub(x => x.get_all_products_for_department(department_id)).Return(
+                    products_in_the_department);
             };
 
             Because b = () =>

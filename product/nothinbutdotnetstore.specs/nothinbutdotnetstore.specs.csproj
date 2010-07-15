@@ -83,6 +83,7 @@
     <Compile Include="web\ResponseEngineSpecs.cs" />
     <Compile Include="web\ViewFactorySpecs.cs" />
     <Compile Include="web\ViewMainDepartmentsSpecs.cs" />
+    <Compile Include="web\ViewSubDepartmentsForDepartmentSpecs.cs" />
     <Compile Include="web\ViewProductSpecs.cs" />
     <Compile Include="web\WebCommandSpecs.cs" />
   </ItemGroup>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{286C7067-D921-4B26-8CFA-9F9B795FD4E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>nothinbutdotnetprep</RootNamespace>
+    <AssemblyName>nothinbutdotnetprep</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\artifacts\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="collections\IsOlderThan.cs" />
+    <Compile Include="collections\Person.cs" />
+    <Compile Include="utility\filtering\AndCriteria.cs" />
+    <Compile Include="utility\filtering\AnonymousCriteria.cs" />
+    <Compile Include="utility\filtering\BinaryCriteria.cs" />
+    <Compile Include="utility\filtering\ComparableCriteriaFactory.cs" />
+    <Compile Include="utility\filtering\Criteria.cs" />
+    <Compile Include="collections\Genre.cs" />
+    <Compile Include="collections\IsPublishedAfter.cs" />
+    <Compile Include="collections\IsPublishedBy.cs" />
+    <Compile Include="collections\Movie.cs" />
+    <Compile Include="collections\MovieCriteria.cs" />
+    <Compile Include="collections\MovieLibrary.cs" />
+    <Compile Include="collections\ProductionStudio.cs" />
+    <Compile Include="utility\EnumerableExtensions.cs" />
+    <Compile Include="utility\filtering\CriteriaExtensions.cs" />
+    <Compile Include="utility\filtering\CriteriaFactory.cs" />
+    <Compile Include="utility\filtering\DefaultCriteriaFactory.cs" />
+    <Compile Include="utility\filtering\FallsInRange.cs" />
+    <Compile Include="utility\filtering\GreaterThan.cs" />
+    <Compile Include="utility\filtering\IsBetween.cs" />
+    <Compile Include="utility\filtering\IsEqualToAny.cs" />
+    <Compile Include="utility\filtering\NotCriteria.cs" />
+    <Compile Include="utility\filtering\NotCriteriaFactory.cs" />
+    <Compile Include="utility\filtering\OrCriteria.cs" />
+    <Compile Include="utility\filtering\PropertyCriteria.cs" />
+    <Compile Include="utility\filtering\Where.cs" />
+    <Compile Include="utility\range\InclusiveRange.cs" />
+    <Compile Include="utility\range\Range.cs" />
+    <Compile Include="utility\sorting\ChainedComparer.cs" />
+    <Compile Include="utility\sorting\ComparableEnumerable.cs" />
+    <Compile Include="utility\sorting\ComparerBuilder.cs" />
+    <Compile Include="utility\sorting\ComparerExtensions.cs" />
+    <Compile Include="utility\sorting\Descending.cs" />
+    <Compile Include="utility\sorting\ListComparer.cs" />
+    <Compile Include="utility\sorting\Normal.cs" />
+    <Compile Include="utility\sorting\PropertyComparer.cs" />
+    <Compile Include="utility\sorting\ReverseComparer.cs" />
+    <Compile Include="utility\sorting\DefaultComparer.cs" />
+    <Compile Include="utility\sorting\Sort.cs" />
+    <Compile Include="utility\sorting\SortDirection.cs" />
+    <Compile Include="utility\sorting\SortDirections.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

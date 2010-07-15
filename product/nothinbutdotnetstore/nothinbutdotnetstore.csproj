@@ -63,11 +63,12 @@
   <ItemGroup>
     <Compile Include="model\Department.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
+    <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
+    <Compile Include="web\application\ViewMainDepartments.cs" />
+    <Compile Include="web\application\ViewSubDepartmentsForDepartment.cs" />
     <Compile Include="model\Product.cs" />
     <Compile Include="tasks\ProductTasks.cs" />
-    <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
     <Compile Include="web\application\InputElements.cs" />
-    <Compile Include="web\application\ViewMainDepartments.cs" />
     <Compile Include="web\application\ViewProducts.cs" />
     <Compile Include="web\core\ApplicationCommand.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
