@@ -1,21 +1,84 @@
 using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq.Expressions;
 using System.Text;
+using nothinbutdotnetstore.model;
 
 namespace nothinbutdotnetstore.web.core.helpers
 {
     public class Url
     {
-        public static string for_command<T, T1>(params Func<T1, object>[] property_setters)
+        public static UrlBuilder<Command> for_command<Command>() where Command : ApplicationCommand
         {
-            var url = new StringBuilder(string.Format("{0}.store", typeof (T).Name));
-            foreach (var property_setter in property_setters)
+            return new UrlBuilder<Command>();
+        }
+    }
+
+    public class UrlBuilder<Command> where Command : ApplicationCommand
+    {
+        public virtual string get_url()
+        {
+            return string.Format("{0}.store", typeof (Command).Name);
+        }
+
+        public UrlBuilder<Command, Model> with_model<Model>(Model model)
+        {
+            return new UrlBuilder<Command, Model>(model);
+        }
+    }
+
+    public class UrlBuilder<Command, Model> : UrlBuilder<Command> where Command : ApplicationCommand
+    {
+        readonly Model model;
+        readonly IDictionary<string, string> parameters;
+
+        public UrlBuilder(Model model)
+        {
+            this.model = model;
+            this.parameters = new Dictionary<string, string>();
+        }
+
+        private UrlBuilder(Model model, IDictionary<string,string> parameters, string new_field, string new_value)
+            : this(model)
+        {
+            foreach (var parameter in parameters)
             {
-                if (url.ToString().EndsWith(".store"))
-                {
-                    url.Append("?");
-                }
+                this.parameters.Add(parameter);
             }
-            return url.ToString();
+            this.parameters.Add(new_field, new_value);
+        }
+
+        public override string get_url()
+        {
+            if (parameters.Count == 0)
+                return base.get_url();
+
+            var query_string = new StringBuilder();
+            foreach (var parameter in parameters)
+            {
+                query_string.Append(query_string.Length == 0 ? "?" : "&");
+                query_string.AppendFormat("{0}={1}", parameter.Key, parameter.Value);
+            }
+            return string.Format("{0}{1}", base.get_url(), query_string);
+        }
+
+        public UrlBuilder<Command, Model> with_parameter<ReturnType>(Expression<Func<Model, ReturnType>> func)
+        {
+            string name;
+            if (func.Body is UnaryExpression)
+            {
+                var expression = (UnaryExpression) func.Body;
+                name = expression.Method.Name;
+            }
+            else
+            {
+                var expression = (MemberExpression) func.Body;
+                name = expression.Member.Name;
+            }
+            var value = func.Compile().Invoke(model).ToString();
+
+            return new UrlBuilder<Command, Model>(model, parameters, name, value);
         }
     }
 }

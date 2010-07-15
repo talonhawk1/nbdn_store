@@ -14,15 +14,16 @@ namespace nothinbutdotnetstore.specs.web
         public class when_creating_a_url_for_a_command : concern
         {
             Establish e = () =>
-                id = 42;
+                department = new Department{id=42};
 
             Because b = () =>
-                result = Url.for_command<ViewSubDepartments,Department>(x => x.id = id);
+                result = Url.for_command<ViewSubDepartments>().with_model(department)
+                    .with_parameter(x => x.id).get_url();
 
             It should_return_url_with_command_name_with_store_extension_with_params_in_query_string = () =>
-                result.ShouldEqual(string.Format("ViewSubDepartments.store?id={0}",id));
+                result.ShouldEqual(string.Format("ViewSubDepartments.store?id={0}", department.id));
 
-            static int id;
+            static Department department;
             static string result;
         }
     }
