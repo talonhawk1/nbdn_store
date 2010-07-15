@@ -5,12 +5,9 @@ namespace nothinbutdotnetstore.infrastructure.extensions
 {
     public static class EnumerableExtensions
     {
-        public static void for_each<T>(this IEnumerable<T> items, Action<T> action)
+        public static void each<T>(this IEnumerable<T> items, Action<T> action)
         {
-            foreach (var item in items)
-            {
-                action(item);
-            }
+            foreach (var item in items) action(item);
         }
     }
 }

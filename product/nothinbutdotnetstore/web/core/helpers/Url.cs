@@ -49,7 +49,7 @@ namespace nothinbutdotnetstore.web.core.helpers
         private UrlBuilder(Model model, IEnumerable<KeyValuePair<string, string>> parameters, 
             string new_field, string new_value) : this(model)
         {
-            parameters.for_each(parameter => this.parameters.Add(parameter));
+            parameters.each(parameter => this.parameters.Add(parameter));
             this.parameters.Add(new_field, new_value);
         }
 
@@ -60,7 +60,7 @@ namespace nothinbutdotnetstore.web.core.helpers
                 return base_url;
 
             var query_string = new StringBuilder();
-            parameters.for_each(parameter =>
+            parameters.each(parameter =>
             {
                 query_string.Append(query_string.Length == 0 ? "?" : "&");
                 query_string.AppendFormat("{0}={1}", parameter.Key, parameter.Value);
