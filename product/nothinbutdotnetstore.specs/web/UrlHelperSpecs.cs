@@ -2,15 +2,16 @@ using Machine.Specifications;
 using nothinbutdotnetstore.model;
 using nothinbutdotnetstore.web.application;
 using nothinbutdotnetstore.web.core.helpers;
-using Machine.Specifications.DevelopWithPassion.Extensions;
 
 namespace nothinbutdotnetstore.specs.web
 {
     public class UrlHelperSpecs
     {
-        public abstract class concern {}
+        public abstract class concern
+        {
+        }
 
-        [Subject(typeof (Url))]
+        [Subject(typeof(Url))]
         public class when_creating_a_url_for_a_command : concern
         {
             Establish e = () =>

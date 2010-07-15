@@ -76,6 +76,8 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\LogSpecs.cs" />
+    <Compile Include="infrastructure\TextWriterLogSpecs.cs" />
     <Compile Include="utility\ObjectMother.cs" />
     <Compile Include="web\StringContainsCommandNameSpecs.cs" />
     <Compile Include="web\CommandRegistrySpecs.cs" />
