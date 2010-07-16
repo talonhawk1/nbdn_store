@@ -1,16 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
-using nothinbutdotnetstore.web.core.stubs;
 
 namespace nothinbutdotnetstore.web.core
 {
     public class DefaultCommandRegistry : CommandRegistry
     {
         IEnumerable<WebCommand> commands;
-
-        public DefaultCommandRegistry() : this(new StubFakeCommandSet())
-        {
-        }
 
         public DefaultCommandRegistry(IEnumerable<WebCommand> commands)
         {

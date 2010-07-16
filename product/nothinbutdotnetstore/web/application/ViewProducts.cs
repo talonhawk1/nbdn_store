@@ -1,6 +1,5 @@
 ﻿using nothinbutdotnetstore.model;
 using nothinbutdotnetstore.tasks;
-using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.core;
 
 namespace nothinbutdotnetstore.web.application
@@ -9,11 +8,6 @@ namespace nothinbutdotnetstore.web.application
     {
         ResponseEngine response_engine;
         CatalogTasks catalog;
-
-        public ViewProducts() : this(new DefaultResponseEngine(),
-                                     new StubCatalogTasks())
-        {
-        }
 
         public ViewProducts(ResponseEngine response_engine, CatalogTasks catalog)
         {

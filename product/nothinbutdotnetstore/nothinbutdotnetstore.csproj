@@ -62,7 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="infrastructure\containers\ContainerFactory.cs" />
+    <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\IOC.cs" />
     <Compile Include="infrastructure\extensions\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\logging\Log.cs" />

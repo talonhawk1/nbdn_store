@@ -2,15 +2,13 @@
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.infrastructure.containers;
-using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs.infrastructure
 {
-    public class ContainerSpecs
+    public class IOCSpecs
     {
         public abstract class concern : Observes
         {
-
         }
 
         [Subject(typeof(IOC))]
@@ -18,27 +16,22 @@ namespace nothinbutdotnetstore.specs.infrastructure
         {
             Establish c = () =>
             {
-                container = an<IOC>();
-                container_factory = an<ContainerFactory>();
+                container = an<Container>();
 
-                resolver = () => container_factory;
-
-                container_factory.Stub(x => x.get_container_for(typeof(when_providing_access_to_the_underlying_container))).Return(container);
+                resolver = () => container;
 
                 change(() => IOC.factory_resolver).to(resolver);
-
             };
 
             Because b = () =>
-                result = IOC.an;
+                result = IOC.get;
 
             It should_return_a_container = () =>
                 result.ShouldEqual(container);
 
-            static IOC result;
-            static IOC container;
-            static ContainerFactory container_factory;
-            static Func<ContainerFactory> resolver;
+            static Container result;
+            static Container container;
+            static Func<Container> resolver;
         }
     }
 }
