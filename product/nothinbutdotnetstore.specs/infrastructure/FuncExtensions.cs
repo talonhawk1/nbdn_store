@@ -6,9 +6,9 @@ namespace nothinbutdotnetstore.specs.infrastructure
     {
         public static Func<T> cache_result<T>(this Func<T> factory)
         {
-            object item = null;
+            T item = default(T);
 
-            return () => item ?? (item = factory());
+            return () => Equals(default(T),item) ? (item = factory()) : item;
         }
     }
 }
