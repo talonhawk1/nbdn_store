@@ -107,15 +107,18 @@ div.supplement {
   </style>
 </head>
 <body>
-  <ul class="prev-next">
+  <ul class="prev-next"><li class="failure">
+      <a href="#1">Go to first failed specification &dArr;</a>
+    </li>
   </ul>
 <h1>
     nothinbutdotnetstore.specs
 </h1>
 <h2 class="count">
-  17 concerns,
-  19 contexts,
-  20 specifications
+  18 concerns,
+  20 contexts,
+  21 specifications,
+    <span class="failure">1 failure</span>
 </h2>
 
   <hr/>
@@ -130,7 +133,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="2">should visit each item in the set with the visitor</a>
+</h4><ul><li class="spec"><a name="3">should visit each item in the set with the visitor</a>
 
 
 
@@ -155,6 +158,50 @@ div.supplement {
 
           </li>
         </ul><h2 class="concern">
+  BasicContainer specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when getting a dependency and it has the factory for that dependency
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="1">should return the dependency created by the factory</a>
+
+  <div class="failure">
+    &lArr; FAILED
+    <ul class="prev-next">
+      <li class="failure">
+      </li>
+      <li class="failure">
+      </li>
+    </ul>
+  </div>
+  <p class="exception_type">
+    TargetInvocationException
+  </p>
+  <pre class="exception_message">System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---&gt; System.NotImplementedException: The method or operation is not implemented.
+   at nothinbutdotnetstore.infrastructure.containers.basic.BasicContainer.an_instance_of[Dependency]() in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore\infrastructure\containers\basic\BasicContainer.cs:line 9
+   at nothinbutdotnetstore.specs.infrastructure.BasicContainerSpecs.when_getting_a_dependency_and_it_has_the_factory_for_that_dependency.&lt;.ctor&gt;b__2() in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore.specs\infrastructure\BasicContainerSpecs.cs:line 33
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct&amp; sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   at System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture, Boolean skipVisibilityChecks)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at System.Delegate.DynamicInvoke(Object[] args)
+   at Machine.Specifications.Utility.RandomExtensionMethods.&lt;InvokeAll&gt;b__1(Delegate item) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 32
+   at Machine.Specifications.Utility.RandomExtensionMethods.Each[T](IEnumerable`1 enumerable, Action`1 action) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 12
+   at Machine.Specifications.Utility.RandomExtensionMethods.InvokeAll(IEnumerable`1 actions) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 32
+   at Machine.Specifications.Utility.RandomExtensionMethods.InvokeAll(IEnumerable`1 becauseActions) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Utility\RandomExtensionMethods.cs:line 17
+   at Machine.Specifications.Model.Context.EstablishContext() in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Model\Context.cs:line 77</pre>
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
   DefaultCommandRegistry specifications
 </h2>
 <h3 class="count">
@@ -164,7 +211,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="9">should return a missing web command</a>
+</h4><ul><li class="spec"><a name="10">should return a missing web command</a>
 
 
 
@@ -177,7 +224,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="8">should return the command that can handle the request</a>
+</h4><ul><li class="spec"><a name="9">should return the command that can handle the request</a>
 
 
 
@@ -195,7 +242,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="10">should tell the command that can process the request to process it</a>
+</h4><ul><li class="spec"><a name="11">should tell the command that can process the request to process it</a>
 
 
 
@@ -213,7 +260,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="12">should tell the view to process</a>
+</h4><ul><li class="spec"><a name="13">should tell the view to process</a>
 
 
 
@@ -231,14 +278,14 @@ div.supplement {
 </h3>
 <h4 class="count">
   2 specifications
-</h4><ul><li class="spec"><a name="14">should provide the page factory with the correct details for correct construction</a>
+</h4><ul><li class="spec"><a name="15">should provide the page factory with the correct details for correct construction</a>
 
 
 
 
  
 
-          </li><li class="spec"><a name="15">should create a view that has been populated with its data</a>
+          </li><li class="spec"><a name="16">should create a view that has been populated with its data</a>
 
 
 
@@ -256,7 +303,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="6">should return path of view for model</a>
+</h4><ul><li class="spec"><a name="7">should return path of view for model</a>
 
 
 
@@ -274,7 +321,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="19">should make the determination by using its request criteria</a>
+</h4><ul><li class="spec"><a name="20">should make the determination by using its request criteria</a>
 
 
 
@@ -287,7 +334,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="20">should delegate the processing to an application specific command</a>
+</h4><ul><li class="spec"><a name="21">should delegate the processing to an application specific command</a>
 
 
 
@@ -305,7 +352,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="1">should return a container</a>
+</h4><ul><li class="spec"><a name="2">should return a container</a>
 
 
 
@@ -323,7 +370,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="4">should return a logger bound to the type of the calling type</a>
+</h4><ul><li class="spec"><a name="5">should return a logger bound to the type of the calling type</a>
 
 
 
@@ -341,7 +388,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="11">should dispatch the request to the front controller</a>
+</h4><ul><li class="spec"><a name="12">should dispatch the request to the front controller</a>
 
 
 
@@ -359,7 +406,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="7">should be satisfied</a>
+</h4><ul><li class="spec"><a name="8">should be satisfied</a>
 
 
 
@@ -377,7 +424,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="5">should write the message to its text writer</a>
+</h4><ul><li class="spec"><a name="6">should write the message to its text writer</a>
 
 
 
@@ -395,7 +442,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="3">should return a textwriterlogger</a>
+</h4><ul><li class="spec"><a name="4">should return a textwriterlogger</a>
 
 
 
@@ -413,7 +460,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="13">should return url with command name with store extension with params in query string</a>
+</h4><ul><li class="spec"><a name="14">should return url with command name with store extension with params in query string</a>
 
 
 
@@ -431,7 +478,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="16">should tell the response engine to display the main departments</a>
+</h4><ul><li class="spec"><a name="17">should tell the response engine to display the main departments</a>
 
 
 
@@ -449,7 +496,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="17">should tell the response engine to display the products</a>
+</h4><ul><li class="spec"><a name="18">should tell the response engine to display the products</a>
 
 
 
@@ -467,7 +514,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="18">should tell the response engine to display the sub departments of a department</a>
+</h4><ul><li class="spec"><a name="19">should tell the response engine to display the sub departments of a department</a>
 
 
 
