@@ -7,8 +7,15 @@ namespace nothinbutdotnetstore.specs.infrastructure
         public static Func<T> cache_result<T>(this Func<T> factory)
         {
             T item = default(T);
+            var cached = false;
 
-            return () => Equals(default(T),item) ? (item = factory()) : item;
+            return () =>
+            {
+                if (cached) return item;
+                cached = true;
+                item = factory();
+                return item;
+            };
         }
     }
 }

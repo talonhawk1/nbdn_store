@@ -36,7 +36,10 @@ namespace nothinbutdotnetstore.specs.infrastructure
         [Subject(typeof(Func<object>))]
         public class when_creating_an_instance_multiple_times : Observes<Func<object>>
         {
-            Establish c = () => { create_sut_using(() => () => new OurClass()); };
+            Establish c = () =>
+            {
+                create_sut_using(() => () => new OurClass());
+            };
 
             Because b = () =>
             {

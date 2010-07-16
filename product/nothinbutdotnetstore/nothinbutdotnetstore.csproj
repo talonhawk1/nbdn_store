@@ -78,6 +78,7 @@
     <Compile Include="infrastructure\logging\simple\TextWriterLogger.cs" />
     <Compile Include="model\Department.cs" />
     <Compile Include="tasks\CatalogTasks.cs" />
+    <Compile Include="tasks\startup\Startup.cs" />
     <Compile Include="tasks\stubs\StubCatalogTasks.cs" />
     <Compile Include="web\application\ViewMainDepartments.cs" />
     <Compile Include="web\application\ViewSubDepartments.cs" />

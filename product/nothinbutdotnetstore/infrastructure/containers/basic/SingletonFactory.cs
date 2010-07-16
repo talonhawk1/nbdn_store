@@ -3,7 +3,6 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
     public class SingletonFactory : DependencyFactory
     {
         DependencyFactory dependency_factory;
-
         object instance;
 
         public SingletonFactory(DependencyFactory dependency_factory)

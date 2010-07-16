@@ -7,7 +7,7 @@ namespace nothinbutdotnetstore.infrastructure.extensions
     {
         public static void each<T>(this IEnumerable<T> items, Action<T> action)
         {
-            foreach (var item in items) action(item);
+            new List<T>(items).ForEach(action);
         }
     }
 }

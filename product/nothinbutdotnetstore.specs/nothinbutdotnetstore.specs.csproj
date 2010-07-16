@@ -86,6 +86,7 @@
     <Compile Include="infrastructure\TextWriterLoggerFactorySpecs.cs" />
     <Compile Include="infrastructure\LogSpecs.cs" />
     <Compile Include="infrastructure\TextWriterLogSpecs.cs" />
+    <Compile Include="tasks\StartupSpecs.cs" />
     <Compile Include="utility\ObjectMother.cs" />
     <Compile Include="web\DefaultViewRegistrySpecs.cs" />
     <Compile Include="web\StringContainsCommandNameSpecs.cs" />
