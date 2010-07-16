@@ -14,7 +14,7 @@ namespace nothinbutdotnetstore.web.core
                 "You need to register a page factory at application startup");
         };
 
-        public DefaultViewFactory():this(new StubViewRegistry())
+        public DefaultViewFactory():this(new DefaultViewRegistry())
         {
             page_factory = BuildManager.CreateInstanceFromVirtualPath;
         }
