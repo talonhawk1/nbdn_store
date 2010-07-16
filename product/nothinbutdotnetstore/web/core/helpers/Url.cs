@@ -55,7 +55,7 @@ namespace nothinbutdotnetstore.web.core.helpers
 
         public string get_url()
         {
-            var base_url = inner_builder.get_url();            
+            var base_url = inner_builder.get_url();         
             if (parameters.Count == 0)
                 return base_url;
 

@@ -74,8 +74,10 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\ContainerSpecs.cs" />
     <Compile Include="infrastructure\EnumerableExtensionsSpecs.cs" />
     <Compile Include="infrastructure\TextWriterLoggerFactorySpecs.cs" />
     <Compile Include="infrastructure\LogSpecs.cs" />

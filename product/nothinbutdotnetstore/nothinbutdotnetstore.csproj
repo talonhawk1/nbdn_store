@@ -59,8 +59,11 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="infrastructure\containers\ContainerFactory.cs" />
+    <Compile Include="infrastructure\containers\IOC.cs" />
     <Compile Include="infrastructure\extensions\EnumerableExtensions.cs" />
     <Compile Include="infrastructure\logging\Log.cs" />
     <Compile Include="infrastructure\logging\Logger.cs" />
