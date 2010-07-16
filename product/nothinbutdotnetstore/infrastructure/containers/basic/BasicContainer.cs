@@ -15,7 +15,14 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
         public Dependency an_instance_of<Dependency>()
         {
             ensure_factory_exists_for<Dependency>();
-            return (Dependency) factories[typeof(Dependency)]();
+            try
+            {
+                return (Dependency) factories[typeof (Dependency)]();
+            }
+            catch (Exception e)
+            {
+                throw new DependencyCreationException("", e, typeof(Dependency));
+            }
         }
 
         void ensure_factory_exists_for<Dependency>()
