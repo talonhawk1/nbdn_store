@@ -1,17 +1,14 @@
 using System;
-using System.Collections.Generic;
 
 namespace nothinbutdotnetstore.specs.infrastructure
 {
     public static class FuncExtensions
     {
-        static IDictionary<Func<object>, object> cache = new Dictionary<Func<object>, object>();
-
-        public static Func<object> cache_result(this Func<object> factory)
+        public static Func<T> cache_result(this Func<T> factory)
         {
-            return () => cache.ContainsKey(factory)
-                ? cache[factory]
-                : (cache[factory] = factory());
+            object item = null;
+
+            return () => item ?? (item = factory());
         }
     }
 }

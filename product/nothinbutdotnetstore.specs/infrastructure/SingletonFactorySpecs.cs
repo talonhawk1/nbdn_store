@@ -12,10 +12,13 @@ namespace nothinbutdotnetstore.specs.infrastructure
         {
         }
 
-        [Subject(typeof(SingletonFactory))]
         public class when_creating_multiple_instances_of_the_dependency : concern
         {
-            Establish c = () => { provide_a_basic_sut_constructor_argument<DependencyFactory>(new OurFactory()); };
+            Establish c = () => 
+            { 
+                provide_a_basic_sut_constructor_argument<DependencyFactory>(new OurFactory());
+            
+            };
 
             Because b = () =>
             {
@@ -33,10 +36,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
         [Subject(typeof(Func<object>))]
         public class when_creating_an_instance_multiple_times : Observes<Func<object>>
         {
-            Establish c = () =>
-            {
-                create_sut_using(() => () => new OurClass());
-            };
+            Establish c = () => { create_sut_using(() => () => new OurClass()); };
 
             Because b = () =>
             {
