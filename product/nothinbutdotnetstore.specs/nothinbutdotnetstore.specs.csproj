@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="infrastructure\BasicContainerSpecs.cs" />
     <Compile Include="infrastructure\BasicDependencyFactorySpecs.cs" />
+    <Compile Include="infrastructure\FuncExtensions.cs" />
     <Compile Include="infrastructure\IOCSpecs.cs" />
     <Compile Include="infrastructure\EnumerableExtensionsSpecs.cs" />
     <Compile Include="infrastructure\SingletonFactorySpecs.cs" />
