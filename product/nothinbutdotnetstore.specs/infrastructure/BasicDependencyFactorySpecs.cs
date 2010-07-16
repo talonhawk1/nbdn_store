@@ -1,7 +1,10 @@
+ using System;
+ using System.Data.SqlClient;
  using Machine.Specifications;
  using Machine.Specifications.DevelopWithPassion.Rhino;
  using nothinbutdotnetstore.infrastructure.containers;
  using nothinbutdotnetstore.infrastructure.containers.basic;
+ using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs.infrastructure
  {   
@@ -18,17 +21,16 @@ namespace nothinbutdotnetstore.specs.infrastructure
          {
              Establish c = () =>
              {
-                 container = the_dependency<Container>();
-                 provide_a_basic_sut_constructor_argument(typeof(ClassWithDependencies));
+                 provide_a_basic_sut_constructor_argument<Func<object>>(() => new ClassWithDependencies(null));
              };
 
              Because b = () =>
-                 sut.create();
+                 result=sut.create();
 
-             It should_resolve_the_objects_dependencies = () =>
-                 container.received(x => x.an_instance_of<TestInterface1>());
+             It should_create_the_item_using_the_factory_delegate = () =>
+                 result.ShouldBeAn<ClassWithDependencies>();
 
-             static Container container;
+             static object result;
          }
 
          public interface TestInterface1{}

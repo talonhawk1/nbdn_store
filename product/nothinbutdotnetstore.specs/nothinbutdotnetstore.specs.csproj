@@ -81,6 +81,7 @@
     <Compile Include="infrastructure\BasicDependencyFactorySpecs.cs" />
     <Compile Include="infrastructure\IOCSpecs.cs" />
     <Compile Include="infrastructure\EnumerableExtensionsSpecs.cs" />
+    <Compile Include="infrastructure\SingletonFactorySpecs.cs" />
     <Compile Include="infrastructure\TextWriterLoggerFactorySpecs.cs" />
     <Compile Include="infrastructure\LogSpecs.cs" />
     <Compile Include="infrastructure\TextWriterLogSpecs.cs" />
