@@ -51,8 +51,10 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
             It should_get_a_factory_not_registered_exception_that_provides_access_to_the_type_that_has_no_factory =
                 () =>
+                {
                     exception_thrown_by_the_sut.ShouldBeAn<DependencyFactoryNotRegisteredException>()
                         .type_that_has_no_factory.ShouldEqual(typeof(IDbConnection));
+                };
         }
     }
 }
