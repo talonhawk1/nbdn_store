@@ -36,11 +36,11 @@ namespace nothinbutdotnetstore.specs.infrastructure
             Establish c = () =>
             {
                 create_sut_using(() => () => new OurClass());
-                add_pipeline_behaviour_against_sut((x) => sut = x.cache_result());
             };
 
             Because b = () =>
             {
+                sut = sut.cache_result();
                 result = sut();
                 result2 = sut();
             };
