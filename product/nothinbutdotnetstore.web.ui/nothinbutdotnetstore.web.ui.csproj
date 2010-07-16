@@ -55,7 +55,13 @@
     <Compile Include="views\DepartmentBrowser.aspx.cs">
       <DependentUpon>DepartmentBrowser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\DepartmentBrowser.aspx.designer.cs">
+      <DependentUpon>DepartmentBrowser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\ProductBrowser.aspx.cs">
+      <DependentUpon>ProductBrowser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\ProductBrowser.aspx.designer.cs">
       <DependentUpon>ProductBrowser.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Store.master.cs">

@@ -1,7 +1,6 @@
 <%@ MasterType VirtualPath="Store.master" %>
 <%@ Page Language="C#" AutoEventWireup="true" 
-Inherits="nothinbutdotnetstore.web.ui.views.DepartmentBrowser" MasterPageFile="Store.master"
-CodeFile="DepartmentBrowser.aspx.cs" %>
+Inherits="nothinbutdotnetstore.web.ui.views.DepartmentBrowser" MasterPageFile="Store.master" Codebehind="DepartmentBrowser.aspx.cs" %>
 <%@ Import Namespace="nothinbutdotnetstore.model" %>
 <%@ Import Namespace="nothinbutdotnetstore.web.application" %>
 <%@ Import Namespace="nothinbutdotnetstore.web.core.helpers" %>

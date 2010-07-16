@@ -92,7 +92,6 @@
     <Compile Include="web\core\criteria\StringContainsNameOfCommand.cs" />
     <Compile Include="web\core\DefaultCommandRegistry.cs" />
     <Compile Include="web\core\DefaultFrontController.cs" />
-    <Compile Include="web\core\DefaultRequestFactory.cs" />
     <Compile Include="web\core\DefaultResponseEngine.cs" />
     <Compile Include="web\core\DefaultViewFactory.cs" />
     <Compile Include="web\core\DefaultViewFor.cs">
