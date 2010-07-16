@@ -51,8 +51,34 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
             It should_get_a_factory_not_registered_exception_that_provides_access_to_the_type_that_has_no_factory =
                 () =>
+                {
                     exception_thrown_by_the_sut.ShouldBeAn<DependencyFactoryNotRegisteredException>()
                         .type_that_has_no_factory.ShouldEqual(typeof(IDbConnection));
+                };
+        }
+
+        [Subject(typeof(BasicContainer))]
+        public class when_getting_a_dependency_and_the_factory_for_the_dependency_throws_an_exception : concern
+        {
+            Establish c = () =>
+            {
+                inner_exception = new Exception();
+                DependencyFactory factory = delegate { throw inner_exception; };
+                factories.Add(typeof(IDbConnection), factory);
+            };
+
+            Because b = () =>
+                catch_exception(() => sut.an_instance_of<IDbConnection>());
+
+            It should_throw_a_dependency_creation_exception_that_provides_access_to_the_correct_information =
+                () =>
+                {
+                    var exception = exception_thrown_by_the_sut.ShouldBeAn<DependencyCreationException>()
+                    exception.type_that_could_not_be_created.ShouldEqual(typeof(IDbConnection));
+                    exception.InnerException.ShouldEqual(inner_exception);
+                };
+
+            static Exception inner_exception;
         }
     }
 }
