@@ -108,7 +108,7 @@ div.supplement {
 </head>
 <body>
   <ul class="prev-next"><li class="failure">
-      <a href="#2">Go to first failed specification &dArr;</a>
+      <a href="#3">Go to first failed specification &dArr;</a>
     </li>
   </ul>
 <h1>
@@ -116,8 +116,8 @@ div.supplement {
 </h1>
 <h2 class="count">
   18 concerns,
-  21 contexts,
-  22 specifications,
+  23 contexts,
+  24 specifications,
     <span class="failure">2 failures</span>
 </h2>
 
@@ -133,7 +133,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="4">should visit each item in the set with the visitor</a>
+</h4><ul><li class="spec"><a name="6">should visit each item in the set with the visitor</a>
 
 
 
@@ -161,7 +161,7 @@ div.supplement {
   BasicContainer specifications
 </h2>
 <h3 class="count">
-  2 contexts, 2 specifications
+  4 contexts, 4 specifications
 </h3><h3 class="context">
   when getting a dependency and it does not have the factory for that dependency
 </h3>
@@ -169,25 +169,6 @@ div.supplement {
   1 specification
 </h4><ul><li class="spec"><a name="2">should get a factory not registered exception that provides access to the type that has no factory</a>
 
-  <div class="failure">
-    &lArr; FAILED
-    <ul class="prev-next">
-      <li class="failure">
-      </li>
-      <li class="failure"><a href="#1" title="Go to next failed specification">&dArr;</a>
-      </li>
-    </ul>
-  </div>
-  <p class="exception_type">
-    SpecificationException
-  </p>
-  <pre class="exception_message">Machine.Specifications.SpecificationException: Should be of type nothinbutdotnetstore.infrastructure.containers.basic.DependencyFactoryNotRegisteredException but is of type System.NotImplementedException
-   at Machine.Specifications.ShouldExtensionMethods.ShouldBeOfType(Object actual, Type expected) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\ExtensionMethods.cs:line 185
-   at Machine.Specifications.ShouldExtensionMethods.ShouldBeOfType[T](Object actual) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\ExtensionMethods.cs:line 190
-   at Machine.Specifications.ShouldExtensionMethods.ShouldBeAn[T](Object item) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\ExtensionMethods.cs:line 195
-   at nothinbutdotnetstore.specs.infrastructure.BasicContainerSpecs.when_getting_a_dependency_and_it_does_not_have_the_factory_for_that_dependency.&lt;.ctor&gt;b__c() in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore.specs\infrastructure\BasicContainerSpecs.cs:line 54
-   at Machine.Specifications.Model.Specification.InvokeSpecificationField() in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Model\Specification.cs:line 75
-   at Machine.Specifications.Model.Specification.Verify() in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Model\Specification.cs:line 53</pre>
 
 
 
@@ -201,10 +182,55 @@ div.supplement {
   1 specification
 </h4><ul><li class="spec"><a name="1">should return the dependency created by the factory</a>
 
+
+
+
+ 
+
+          </li>
+        </ul><h3 class="context">
+  when getting a dependency and the factory for the dependency throws an exception
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="3">should throw a dependency creation exception that provides access to the correct information</a>
+
   <div class="failure">
     &lArr; FAILED
     <ul class="prev-next">
-      <li class="failure"><a href="#2" title="Go to previous failed specification">&uArr;</a>
+      <li class="failure">
+      </li>
+      <li class="failure"><a href="#4" title="Go to next failed specification">&dArr;</a>
+      </li>
+    </ul>
+  </div>
+  <p class="exception_type">
+    SpecificationException
+  </p>
+  <pre class="exception_message">Machine.Specifications.SpecificationException: Should be of type nothinbutdotnetstore.infrastructure.containers.basic.DependencyCreationException but is of type System.Exception
+   at Machine.Specifications.ShouldExtensionMethods.ShouldBeOfType(Object actual, Type expected) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\ExtensionMethods.cs:line 185
+   at Machine.Specifications.ShouldExtensionMethods.ShouldBeOfType[T](Object actual) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\ExtensionMethods.cs:line 190
+   at Machine.Specifications.ShouldExtensionMethods.ShouldBeAn[T](Object item) in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\ExtensionMethods.cs:line 195
+   at nothinbutdotnetstore.specs.infrastructure.BasicContainerSpecs.when_getting_a_dependency_and_the_factory_for_the_dependency_throws_an_exception.&lt;.ctor&gt;b__14() in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore.specs\infrastructure\BasicContainerSpecs.cs:line 79
+   at Machine.Specifications.Model.Specification.InvokeSpecificationField() in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Model\Specification.cs:line 75
+   at Machine.Specifications.Model.Specification.Verify() in c:\Users\jp\repositories\github\machine.specifications\Source\Machine.Specifications\Model\Specification.cs:line 53</pre>
+
+
+
+ 
+
+          </li>
+        </ul><h3 class="context">
+  when getting a dependency for a type at runtime
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="4">should return the dependency created by the factory</a>
+
+  <div class="failure">
+    &lArr; FAILED
+    <ul class="prev-next">
+      <li class="failure"><a href="#3" title="Go to previous failed specification">&uArr;</a>
       </li>
       <li class="failure">
       </li>
@@ -214,8 +240,8 @@ div.supplement {
     TargetInvocationException
   </p>
   <pre class="exception_message">System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---&gt; System.NotImplementedException: The method or operation is not implemented.
-   at nothinbutdotnetstore.infrastructure.containers.basic.BasicContainer.an_instance_of[Dependency]() in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore\infrastructure\containers\basic\BasicContainer.cs:line 9
-   at nothinbutdotnetstore.specs.infrastructure.BasicContainerSpecs.when_getting_a_dependency_and_it_has_the_factory_for_that_dependency.&lt;.ctor&gt;b__4() in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore.specs\infrastructure\BasicContainerSpecs.cs:line 37
+   at nothinbutdotnetstore.infrastructure.containers.basic.BasicContainer.an_instance_of(Type dependency_type) in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore\infrastructure\containers\basic\BasicContainer.cs:line 23
+   at nothinbutdotnetstore.specs.infrastructure.BasicContainerSpecs.when_getting_a_dependency_for_a_type_at_runtime.&lt;.ctor&gt;b__1c() in c:\Users\jp\repositories\github\nbdn_store\product\nothinbutdotnetstore.specs\infrastructure\BasicContainerSpecs.cs:line 99
    --- End of inner exception stack trace ---
    at System.RuntimeMethodHandle._InvokeMethodFast(Object target, Object[] arguments, SignatureStruct&amp; sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
    at System.RuntimeMethodHandle.InvokeMethodFast(Object target, Object[] arguments, Signature sig, MethodAttributes methodAttributes, RuntimeTypeHandle typeOwner)
@@ -243,7 +269,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="11">should return a missing web command</a>
+</h4><ul><li class="spec"><a name="13">should return a missing web command</a>
 
 
 
@@ -256,7 +282,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="10">should return the command that can handle the request</a>
+</h4><ul><li class="spec"><a name="12">should return the command that can handle the request</a>
 
 
 
@@ -274,7 +300,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="12">should tell the command that can process the request to process it</a>
+</h4><ul><li class="spec"><a name="14">should tell the command that can process the request to process it</a>
 
 
 
@@ -292,7 +318,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="14">should tell the view to process</a>
+</h4><ul><li class="spec"><a name="16">should tell the view to process</a>
 
 
 
@@ -310,14 +336,14 @@ div.supplement {
 </h3>
 <h4 class="count">
   2 specifications
-</h4><ul><li class="spec"><a name="16">should provide the page factory with the correct details for correct construction</a>
+</h4><ul><li class="spec"><a name="18">should provide the page factory with the correct details for correct construction</a>
 
 
 
 
  
 
-          </li><li class="spec"><a name="17">should create a view that has been populated with its data</a>
+          </li><li class="spec"><a name="19">should create a view that has been populated with its data</a>
 
 
 
@@ -335,7 +361,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="8">should return path of view for model</a>
+</h4><ul><li class="spec"><a name="10">should return path of view for model</a>
 
 
 
@@ -353,7 +379,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="21">should make the determination by using its request criteria</a>
+</h4><ul><li class="spec"><a name="23">should make the determination by using its request criteria</a>
 
 
 
@@ -366,7 +392,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="22">should delegate the processing to an application specific command</a>
+</h4><ul><li class="spec"><a name="24">should delegate the processing to an application specific command</a>
 
 
 
@@ -384,7 +410,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="3">should return a container</a>
+</h4><ul><li class="spec"><a name="5">should return a container</a>
 
 
 
@@ -402,7 +428,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="6">should return a logger bound to the type of the calling type</a>
+</h4><ul><li class="spec"><a name="8">should return a logger bound to the type of the calling type</a>
 
 
 
@@ -420,7 +446,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="13">should dispatch the request to the front controller</a>
+</h4><ul><li class="spec"><a name="15">should dispatch the request to the front controller</a>
 
 
 
@@ -438,7 +464,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="9">should be satisfied</a>
+</h4><ul><li class="spec"><a name="11">should be satisfied</a>
 
 
 
@@ -456,7 +482,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="7">should write the message to its text writer</a>
+</h4><ul><li class="spec"><a name="9">should write the message to its text writer</a>
 
 
 
@@ -474,7 +500,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="5">should return a textwriterlogger</a>
+</h4><ul><li class="spec"><a name="7">should return a textwriterlogger</a>
 
 
 
@@ -492,7 +518,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="15">should return url with command name with store extension with params in query string</a>
+</h4><ul><li class="spec"><a name="17">should return url with command name with store extension with params in query string</a>
 
 
 
@@ -510,7 +536,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="18">should tell the response engine to display the main departments</a>
+</h4><ul><li class="spec"><a name="20">should tell the response engine to display the main departments</a>
 
 
 
@@ -528,7 +554,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="19">should tell the response engine to display the products</a>
+</h4><ul><li class="spec"><a name="21">should tell the response engine to display the products</a>
 
 
 
@@ -546,7 +572,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="20">should tell the response engine to display the sub departments of a department</a>
+</h4><ul><li class="spec"><a name="22">should tell the response engine to display the sub departments of a department</a>
 
 
 
