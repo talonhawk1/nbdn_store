@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="infrastructure\containers\basic\BasicContainer.cs" />
     <Compile Include="infrastructure\containers\basic\DependencyFactory.cs" />
+    <Compile Include="infrastructure\containers\basic\DependencyFactoryNotRegisteredException.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\IOC.cs" />
     <Compile Include="infrastructure\extensions\EnumerableExtensions.cs" />

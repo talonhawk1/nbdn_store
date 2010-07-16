@@ -14,6 +14,13 @@ namespace nothinbutdotnetstore.specs.infrastructure
         public abstract class concern : Observes<Container,
                                             BasicContainer>
         {
+            Establish c = () =>
+            {
+                factories = new Dictionary<Type, DependencyFactory>();
+                provide_a_basic_sut_constructor_argument(factories);
+            };
+
+            protected static IDictionary<Type, DependencyFactory> factories;
         }
 
         [Subject(typeof(BasicContainer))]
@@ -21,9 +28,6 @@ namespace nothinbutdotnetstore.specs.infrastructure
         {
             Establish c = () =>
             {
-                factories = new Dictionary<Type, DependencyFactory>();
-                provide_a_basic_sut_constructor_argument(factories);
-
                 connection = new SqlConnection();
                 DependencyFactory factory = () => connection;
                 factories.Add(typeof(IDbConnection), factory);
@@ -37,7 +41,18 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
             static object result;
             static IDbConnection connection;
-            static IDictionary<Type, DependencyFactory> factories;
+        }
+
+        [Subject(typeof(BasicContainer))]
+        public class when_getting_a_dependency_and_it_does_not_have_the_factory_for_that_dependency : concern
+        {
+            Because b = () =>
+                catch_exception(() => sut.an_instance_of<IDbConnection>());
+
+            It should_get_a_factory_not_registered_exception_that_provides_access_to_the_type_that_has_no_factory =
+                () =>
+                    exception_thrown_by_the_sut.ShouldBeAn<DependencyFactoryNotRegisteredException>()
+                        .type_that_has_no_factory.ShouldEqual(typeof(IDbConnection));
         }
     }
 }
