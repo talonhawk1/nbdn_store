@@ -1,6 +1,5 @@
-using System;
 using System.Web;
-using nothinbutdotnetstore.web.core.stubs;
+using nothinbutdotnetstore.infrastructure.containers;
 
 namespace nothinbutdotnetstore.web.core
 {
@@ -9,10 +8,10 @@ namespace nothinbutdotnetstore.web.core
         FrontController front_controller;
         RequestFactory request_factory;
 
-        public RawHandler():this(new DefaultFrontController(),new StubRequestFactory())
+        public RawHandler() : this(IOC.get.an_instance_of<FrontController>(),
+                                   IOC.get.an_instance_of<RequestFactory>())
         {
         }
-        
 
         public RawHandler(FrontController front_controller, RequestFactory request_factory)
         {
@@ -30,6 +29,4 @@ namespace nothinbutdotnetstore.web.core
             get { return true; }
         }
     }
-
-    
 }

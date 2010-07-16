@@ -1,6 +1,5 @@
 using System;
-using System.Web.Compilation;
-using nothinbutdotnetstore.web.core.stubs;
+	using System.Web.Compilation;
 
 namespace nothinbutdotnetstore.web.core
 {
@@ -14,11 +13,6 @@ namespace nothinbutdotnetstore.web.core
                 "You need to register a page factory at application startup");
         };
 
-        public DefaultViewFactory():this(new StubViewRegistry())
-        {
-            page_factory = BuildManager.CreateInstanceFromVirtualPath;
-        }
-
         public DefaultViewFactory(ViewRegistry view_registry)
         {
             this.view_registry = view_registry;
@@ -27,7 +21,7 @@ namespace nothinbutdotnetstore.web.core
         public ViewFor<ViewModel> create_view<ViewModel>(ViewModel view_model)
         {
             var view = (ViewFor<ViewModel>) page_factory(view_registry.get_path_to_view_for<ViewModel>(),
-                typeof(ViewFor<ViewModel>));
+                                                         typeof(ViewFor<ViewModel>));
 
             view.model = view_model;
 

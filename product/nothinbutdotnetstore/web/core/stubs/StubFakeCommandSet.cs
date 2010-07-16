@@ -15,11 +15,11 @@ namespace nothinbutdotnetstore.web.core.stubs
         {
 
             yield return new DefaultWebCommand(x => true,
-                                               new ViewMainDepartments());
+                                               new ViewMainDepartments(null,null));
             yield return new DefaultWebCommand(x => true,
-                                               new ViewSubDepartments());
+                                               new ViewSubDepartments(null,null));
             yield return new DefaultWebCommand(x => true,
-                                               new ViewProducts());
+                                               new ViewProducts(null,null));
         }
     }
 }

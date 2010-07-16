@@ -113,24 +113,24 @@ div.supplement {
     nothinbutdotnetstore.specs
 </h1>
 <h2 class="count">
-  14 concerns,
-  16 contexts,
-  17 specifications
+  17 concerns,
+  19 contexts,
+  20 specifications
 </h2>
 
   <hr/>
   <hr/>
 <h2 class="concern">
-  DefaultCommandRegistry specifications
+   specifications
 </h2>
 <h3 class="count">
-  2 contexts, 2 specifications
+  1 context, 1 specification
 </h3><h3 class="context">
-  when attempting to get a command for a request and it does not have the command
+  when performing an action over a set of items
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="6">should return a missing web command</a>
+</h4><ul><li class="spec"><a name="2">should visit each item in the set with the visitor</a>
 
 
 
@@ -154,12 +154,30 @@ div.supplement {
 </script> 
 
           </li>
+        </ul><h2 class="concern">
+  DefaultCommandRegistry specifications
+</h2>
+<h3 class="count">
+  2 contexts, 2 specifications
+</h3><h3 class="context">
+  when attempting to get a command for a request and it does not have the command
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="9">should return a missing web command</a>
+
+
+
+
+ 
+
+          </li>
         </ul><h3 class="context">
   when getting a command that can handle a request and it has the command
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="5">should return the command that can handle the request</a>
+</h4><ul><li class="spec"><a name="8">should return the command that can handle the request</a>
 
 
 
@@ -177,7 +195,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="7">should tell the command that can process the request to process it</a>
+</h4><ul><li class="spec"><a name="10">should tell the command that can process the request to process it</a>
 
 
 
@@ -195,7 +213,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="9">should tell the view to process</a>
+</h4><ul><li class="spec"><a name="12">should tell the view to process</a>
 
 
 
@@ -213,14 +231,32 @@ div.supplement {
 </h3>
 <h4 class="count">
   2 specifications
-</h4><ul><li class="spec"><a name="11">should provide the page factory with the correct details for correct construction</a>
+</h4><ul><li class="spec"><a name="14">should provide the page factory with the correct details for correct construction</a>
 
 
 
 
  
 
-          </li><li class="spec"><a name="12">should create a view that has been populated with its data</a>
+          </li><li class="spec"><a name="15">should create a view that has been populated with its data</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DefaultViewRegistry specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when getting path to view for view model
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="6">should return path of view for model</a>
 
 
 
@@ -238,7 +274,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="16">should make the determination by using its request criteria</a>
+</h4><ul><li class="spec"><a name="19">should make the determination by using its request criteria</a>
 
 
 
@@ -251,7 +287,25 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="17">should delegate the processing to an application specific command</a>
+</h4><ul><li class="spec"><a name="20">should delegate the processing to an application specific command</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  IOC specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when providing access to the underlying container
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="1">should return a container</a>
 
 
 
@@ -269,7 +323,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="2">should return a logger bound to the type of the calling type</a>
+</h4><ul><li class="spec"><a name="4">should return a logger bound to the type of the calling type</a>
 
 
 
@@ -287,7 +341,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="8">should dispatch the request to the front controller</a>
+</h4><ul><li class="spec"><a name="11">should dispatch the request to the front controller</a>
 
 
 
@@ -305,7 +359,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="4">should be satisfied</a>
+</h4><ul><li class="spec"><a name="7">should be satisfied</a>
 
 
 
@@ -323,7 +377,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="3">should write the message to its text writer</a>
+</h4><ul><li class="spec"><a name="5">should write the message to its text writer</a>
 
 
 
@@ -341,7 +395,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="1">should return a textwriterlogger</a>
+</h4><ul><li class="spec"><a name="3">should return a textwriterlogger</a>
 
 
 
@@ -359,7 +413,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="10">should return url with command name with store extension with params in query string</a>
+</h4><ul><li class="spec"><a name="13">should return url with command name with store extension with params in query string</a>
 
 
 
@@ -377,7 +431,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="13">should tell the response engine to display the main departments</a>
+</h4><ul><li class="spec"><a name="16">should tell the response engine to display the main departments</a>
 
 
 
@@ -395,7 +449,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="14">should tell the response engine to display the products</a>
+</h4><ul><li class="spec"><a name="17">should tell the response engine to display the products</a>
 
 
 
@@ -413,7 +467,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="15">should tell the response engine to display the sub departments of a department</a>
+</h4><ul><li class="spec"><a name="18">should tell the response engine to display the sub departments of a department</a>
 
 
 
