@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using nothinbutdotnetstore.infrastructure.containers;
+using nothinbutdotnetstore.infrastructure.containers.basic;
 
 namespace nothinbutdotnetstore.tasks.startup
 {
@@ -6,7 +9,12 @@ namespace nothinbutdotnetstore.tasks.startup
     {
         public static void run()
         {
-            throw new NotImplementedException();
+            var factories = new Dictionary<Type,DependencyFactory>();
+            IOC.factory_resolver = () => new BasicContainer(factories);
+
+
+
+
         }
     }
 }

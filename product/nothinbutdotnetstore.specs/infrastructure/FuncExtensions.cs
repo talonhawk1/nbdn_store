@@ -13,8 +13,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
             {
                 if (cached) return item;
                 cached = true;
-                item = factory();
-                return item;
+                return (item = factory());
             };
         }
     }

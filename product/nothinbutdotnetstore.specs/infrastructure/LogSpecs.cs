@@ -27,8 +27,6 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
                 logger_factory.Stub(x => x.get_logger_for(typeof(when_providing_access_to_the_underlying_logging_api))).Return(logger);
 
-                change(() => Log.factory_resolver).to(resolver);
-
             };
 
             Because b = () =>

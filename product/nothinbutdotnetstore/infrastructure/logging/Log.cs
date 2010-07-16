@@ -1,16 +1,14 @@
 using System;
 using System.Diagnostics;
+using nothinbutdotnetstore.infrastructure.containers;
 
 namespace nothinbutdotnetstore.infrastructure.logging
 {
     public class Log
     {
-        public static Func<LoggerFactory> factory_resolver =
-            delegate { throw new NotImplementedException("This needs to be configured by the application startup pipeline"); };
-
         public static Logger an
         {
-            get { return factory_resolver().get_logger_for(calling_type()); }
+            get { return IOC.get.an_instance_of<LoggerFactory>().get_logger_for(calling_type()); }
         }
 
         static Type calling_type()
