@@ -2,7 +2,6 @@
 using System;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
-using nothinbutdotnetstore.infrastructure;
 using nothinbutdotnetstore.infrastructure.logging;
 using Rhino.Mocks;
 
