@@ -5,7 +5,7 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
 {
     public class BasicContainer : Container
     {
-        readonly IDictionary<Type, DependencyFactory> factories;
+        IDictionary<Type, DependencyFactory> factories;
 
         public BasicContainer(IDictionary<Type, DependencyFactory> factories)
         {
@@ -14,18 +14,14 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
 
         public Dependency an_instance_of<Dependency>()
         {
-            var type = typeof (Dependency);
-            if (factories.ContainsKey(type))
-            {
-                return (Dependency) factories[type]();
-            }
-
-            throw new DependencyFactoryNotRegisteredException(type);
+            ensure_factory_exists_for<Dependency>();
+            return (Dependency) factories[typeof(Dependency)]();
         }
 
-        public void register_instance<Dependency>(Dependency instance)
+        void ensure_factory_exists_for<Dependency>()
         {
-            throw new NotImplementedException();
+            if (factories.ContainsKey(typeof(Dependency))) return;
+            throw new DependencyFactoryNotRegisteredException(typeof(Dependency));
         }
     }
 }

@@ -73,7 +73,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
             It should_throw_a_dependency_creation_exception_that_provides_access_to_the_correct_information =
                 () =>
                 {
-                    var exception = exception_thrown_by_the_sut.ShouldBeAn<DependencyCreationException>()
+                    var exception = exception_thrown_by_the_sut.ShouldBeAn<DependencyCreationException>();
                     exception.type_that_could_not_be_created.ShouldEqual(typeof(IDbConnection));
                     exception.InnerException.ShouldEqual(inner_exception);
                 };
