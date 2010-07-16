@@ -1,3 +1,4 @@
+using System;
 using System.Data.SqlClient;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
@@ -18,8 +19,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
         {
             Establish c = () =>
             {
-                original_factory = the_dependency<DependencyFactory>();
-                original_factory.Stub(factory => factory.create()).Return(new SqlConnection());
+                provide_a_basic_sut_constructor_argument<DependencyFactory>(new OurFactory());
             };
 
             Because b = () =>
@@ -31,9 +31,22 @@ namespace nothinbutdotnetstore.specs.infrastructure
             It should_return_the_same_instance_each_time = () =>
                 result.ShouldEqual(result2);
 
+
             static object result;
             static object result2;
             static DependencyFactory original_factory;
         }
+
+        public class OurFactory : DependencyFactory
+        {
+            public object create()
+            {
+                return new OurClass();
+            }
+        }
+    }
+
+    class OurClass
+    {
     }
 }
