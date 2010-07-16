@@ -14,21 +14,26 @@ namespace nothinbutdotnetstore.infrastructure.containers.basic
 
         public Dependency an_instance_of<Dependency>()
         {
-            ensure_factory_exists_for<Dependency>();
+            return (Dependency) an_instance_of(typeof(Dependency));
+        }
+
+        void ensure_factory_exists_for(Type dependency)
+        {
+            if (factories.ContainsKey(dependency)) return;
+            throw new DependencyFactoryNotRegisteredException(dependency);
+        }
+
+        public object an_instance_of(Type dependency_type)
+        {
+            ensure_factory_exists_for(dependency_type);
             try
             {
-                return (Dependency) factories[typeof (Dependency)]();
+                return factories[dependency_type].create();
             }
             catch (Exception e)
             {
-                throw new DependencyCreationException("", e, typeof(Dependency));
+                throw new DependencyCreationException(e,dependency_type);
             }
-        }
-
-        void ensure_factory_exists_for<Dependency>()
-        {
-            if (factories.ContainsKey(typeof(Dependency))) return;
-            throw new DependencyFactoryNotRegisteredException(typeof(Dependency));
         }
     }
 }

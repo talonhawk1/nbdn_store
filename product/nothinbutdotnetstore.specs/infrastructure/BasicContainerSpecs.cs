@@ -6,6 +6,7 @@ using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.infrastructure.containers;
 using nothinbutdotnetstore.infrastructure.containers.basic;
+using Rhino.Mocks;
 
 namespace nothinbutdotnetstore.specs.infrastructure
 {
@@ -29,7 +30,8 @@ namespace nothinbutdotnetstore.specs.infrastructure
             Establish c = () =>
             {
                 connection = new SqlConnection();
-                DependencyFactory factory = () => connection;
+                var factory = an<DependencyFactory>();
+                factory.Stub(x => x.create()).Return(connection);
                 factories.Add(typeof(IDbConnection), factory);
             };
 
@@ -63,7 +65,8 @@ namespace nothinbutdotnetstore.specs.infrastructure
             Establish c = () =>
             {
                 inner_exception = new Exception();
-                DependencyFactory factory = delegate { throw inner_exception; };
+                var factory = an<DependencyFactory>();
+                factory.Stub(x => x.create()).Throw(inner_exception);
                 factories.Add(typeof(IDbConnection), factory);
             };
 
@@ -79,6 +82,27 @@ namespace nothinbutdotnetstore.specs.infrastructure
                 };
 
             static Exception inner_exception;
+        }
+
+        [Subject(typeof(BasicContainer))]
+        public class when_getting_a_dependency_for_a_type_at_runtime : concern
+        {
+            Establish c = () =>
+            {
+                connection = new SqlConnection();
+                var factory = an<DependencyFactory>();
+                factory.Stub(x => x.create()).Return(connection);
+                factories.Add(typeof(IDbConnection), factory);
+            };
+
+            Because b = () =>
+                result = sut.an_instance_of(typeof(IDbConnection));
+
+            It should_return_the_dependency_created_by_the_factory = () =>
+                result.ShouldEqual(connection);
+
+            static object result;
+            static IDbConnection connection;
         }
     }
 }
